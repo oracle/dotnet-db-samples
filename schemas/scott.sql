@@ -1,20 +1,25 @@
-Rem Copyright (c) 1990 by Oracle Corporation
-Rem NAME
-REM    UTLSAMPL.SQL
-Rem  FUNCTION
-Rem  NOTES
-Rem  MODIFIED
-Rem	gdudey	   06/28/95 -  Modified for desktop seed database
-Rem	glumpkin   10/21/92 -  Renamed from SQLBLD.SQL
-Rem	blinden   07/27/92 -  Added primary and foreign keys to EMP and DEPT
-Rem	rlim	   04/29/91 -	      change char to varchar2
-Rem	mmoore	   04/08/91 -	      use unlimited tablespace priv
-Rem	pritto	   04/04/91 -	      change SYSDATE to 13-JUL-87
-Rem   Mendels	 12/07/90 - bug 30123;add to_date calls so language independent
+Rem  Copyright (c) 2016 by Oracle Corporation
 Rem
-rem
-rem $Header: utlsampl.sql 7020100.1 94/09/23 22:14:24 cli Generic<base> $ sqlbld.sql
-rem
+Rem  You may not use the identified files except in compliance with The MIT
+Rem  License (the "License.")
+Rem
+Rem  You may obtain a copy of the License at
+Rem  https://github.com/oracle/Oracle.NET/blob/master/LICENSE
+Rem
+Rem  Unless required by applicable law or agreed to in writing, software
+Rem  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+Rem  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+Rem
+Rem  See the License for the specific language governing permissions and
+Rem  limitations under the License.
+Rem
+Rem  NAME
+REM    scott.sql
+Rem  
+Rem  DESCRIPTION
+Rem    SCOTT is a database user whose schema is used for Oracle code demonstrations
+
+
 SET TERMOUT OFF
 SET ECHO OFF
 
