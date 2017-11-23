@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>View Products Sample - Populate DataSet With Multiple REF
+Cursors Through ODP.NET - Readme</title>
+		 		
+  <link rel="stylesheet" href="otn.css" type="text/css">
+</head>
+	<body bgcolor="#ffffff">
+<a name="SAMPLE_NAME"></a>
+<table width="100%" align="center" height="2669">
+  <tbody>
+    <tr>
+      <td width="100%">
+      <h1 class="heading1"> View Products Sample - <font size="+2">Populate
+DataSet         With Multiple REF Cursors Through ODP.NET</font></h1>
+      <h2 class="heading2">Table of Contents</h2>
+      <ul class="list">
+        <li><a href="#objective">Objective of the Sample Application</a></li>
+        <li><a href="#overview">Overview of the Sample Application</a> </li>
+        <li> <a href="#usernotes">User Notes with Screen Shots </a></li>
+        <li><a href="#software">Required Software</a></li>
+        <li><a href="#extract">Extracting the Sample</a></li>
+        <li><a href="#database">Database Setup</a></li>
+        <li><a href="#prepare">Preparing and Running the sample</a></li>
+        <li> <a href="#descsamples">Description of Sample Files</a></li>
+      </ul>
+      <table border="0" width="96%" height="19">
+        <tbody>
+          <tr>
+            <td width="62%" height="22">
+            <h2 class="heading2"><a name="objective"></a> Objective of
+the Sample               Application</h2>
+            </td>
+		 <td width="38%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tabletext">The purpose of this sample application is to
+demonstrate         how to populate a <code class="nocolor">DataSet</code>
+with data from multiple REF Cursors         through Oracle Data
+Provider for .NET (ODP.NET) using C#.</p>
+      <table border="0" width="96%">
+        <tbody>
+          <tr>
+            <td width="62%">
+            <h2 class="heading2"> <a name="overview"></a>Overview of
+the Sample               Application</h2>
+            </td>
+            <td width="38%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tabletext">The database Stored Procedure returning
+multiple REF         Cursors is called using OracleCommand Object. The
+REF Cursor parameters         are bound to <code class="nocolor">OracleCommand</code>
+object using <code class="nocolor">'OracleDbType.RefCursor'</code>.   
+The Command type is set to 'StoredProcedure' for <code class="nocolor">OracleCommand</code>.
+The <code class="nocolor">OracleDataAdapter</code> executes this
+command         object. <code class="nocolor">OracleDataAdapter</code>
+fills the <code class="nocolor">DataSet</code> with REF Cursors returned
+from the Stored Procedure. The No. of Data Tables         created in
+the <code class="nocolor">DataSet</code> is equal to the No.        
+of REF Cursors returned from the Stored Procedure. The Data Tables are
+ named as 'TableN' where N stands for an integer starting from 0. These
+ Data Tables can be bound to different Data Grids.&nbsp; </p>
+      <p class="tabletext">When this sample application is run, two
+Data Grids         are displayed. One Data Grid populated with records
+for products with         'Orderable' product status and other Data
+Grid populated with records         for products with 'Under
+Development' product status. A database Stored         Procedure <code
+ class="nocolor">'GetProductsInfo'</code> is called that returns two REF
+cursors as 'OUT' parameters. The <code class="nocolor">DataSet</code>
+is filled with data         in REF Cursor. The two Data Tables created
+are 'Products' and 'Products1'.         The Data Grids are bound to
+these Data Tables. This demonstrates how to         populate <code
+ class="nocolor">DataSet</code> with multiple REF Cursors.&nbsp; </p>
+      <p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="usernotes"></a> User Notes
+with Screen               Shots</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p class="tabletext"><span text="" class="OTN_TEXT">When this
+sample application         is run, a list of products with 'Orderable'
+status is shown in the first         Data Grid and a list
+of&nbsp;products with 'Under Development' status         in the second
+Data Grid is displayed as shown in figure 1.1,&nbsp; On        
+clicking the 'Close' button,&nbsp;the application gets closed.&nbsp;</span> </p>
+      <p><span class="OTN_TEXT"><img src="images%5Cscreenshot.gif"
+ height="566" width="679"><br>
+      </span></p>
+      <p>&nbsp;<code class="nocolor"> Figure 1.1 Screen Shot for
+Populate Data Set with Multiple         REF Cursors Sample </code></p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="software"></a> Required
+Software</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>
+          <p><span text="text" class="tabletext">Visual C# installed
+with Visual
+Studio 2005/2008/2010/2012.</span></p>
+        </li>
+        <li>
+          <p><span text="text" class="tabletext"><font
+ face="Arial,Helvetica">Oracle11g             Database or higher running
+SQL*Net TCP/IP listener (can be downloaded <a
+ href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">here</a> )</font> </span></p>
+        </li>
+        <li>
+          <p><span text="text" class="tabletext"><font
+ face="Arial,Helvetica">Oracle             Data Provider for .NET
+(ODP.NET) (can be downloaded <a
+ href="http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html">here</a> )</font></span> </p>
+        </li>
+      </ul>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="extract"></a> Extracting the
+Sample </h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="paragraph"><span text="" class="OTN_TEXT">Unzip <code
+ class="nocolor">DSwithRefCur.zip</code> using Winzip or command utility
+to your convenient directory </span><span class="OTN_TEXT">referred  
+to as </span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span
+ text="" class="OTN_TEXT">.         Extraction of the zip file
+results&nbsp;in the creation of <code class="nocolor">'DSwithRefCur'</code>
+directory.&nbsp; </span><span class="OTN_TEXT">Refer <a
+ href="#descsamples">Description         of Sample Files</a> section
+for more details.&nbsp;</span> &nbsp; &nbsp; </p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="database"></a> Database Setup</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><font face="Arial, Helvetica, sans-serif">C<span
+ class="tabletext">onnect         to your database as any user and run
+the scripts </span><code class="nocolor">DSwithRefCur\Setup\DatabaseSetup.sql</code><span
+ class="tabletext"> and&nbsp; <code class="nocolor">DSRefCur\Config\StoredProcedure.sql</code>
+at the SQL         prompt</span></font> <span class="tabletext"><br>
+      </span><tt><span class="code">SQL&gt; @</span><code
+ class="nocolor"><span class="code">&lt;Extract_Dir&gt;</span></code><span
+ class="code">\DSwithRefCur\Setup\DatabaseSetup.sql</span></tt> <br>
+      <tt><sql> <span class="code">SQL&gt; @</span><span
+ class="PropertyName"><code class="code">&lt;Extract_Dir&gt;</code></span><span
+ class="code">\DSwithRefCur\Setup\StoredProcedure.sql</span></sql></tt> </p>
+      <p class="tabletext"><font face="Arial, Helvetica, sans-serif"><code
+ class="nocolor">DatabaseSetup.sql</code> file creates a user "oranet"
+with password "oranet". This script prompts         for
+"SystemPassword" and "TNSName". All the database         objects
+required by the&nbsp;application are created and populated with       
+sample data.</font> <code class="nocolor">StoredProcedure.sql</code>
+file creates a package 'ODPNet' that returns multiple REF Cursors.&nbsp;</p>
+      <p class="tabletext"><font face="Arial, Helvetica, sans-serif">Following
+is the list of database objects that get created by running
+DatabaseSetup.sql</font> file.
+      <table border="0" width="72%">
+        <tbody>
+          <tr>
+            <td width="19%" class="tabletext"><b>Object Name</b></td>
+            <td width="81%" class="tabletext"><b>Description</b></td>
+          </tr>
+          <tr>
+            <td width="19%" class="tabletext">Products</td>
+            <td width="81%" class="tabletext">Table that store
+information about             products.</td>
+          </tr>
+          <tr>
+            <td width="19%" class="tabletext">Printmedia</td>
+            <td width="81%" class="tabletext">Table that stores
+information about             the advertisement related to products.</td>
+          </tr>
+          <tr>
+            <td width="19%" class="tabletext">Adid_seq</td>
+            <td width="81%" class="tabletext">Sequence for auto
+generating Advertisement             ID.</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">Populate_AdID</td>
+            <td class="tabletext" width="81%">Trigger for
+populating&nbsp; Ad_ID             column of 'PrintMedia'&nbsp; table
+on insertion.</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">ODPNet</td>
+            <td class="tabletext" width="81%">Database Package
+containing 'getProductsInfo'             stored procedure.</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p>&nbsp;
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="prepare"></a> Preparing and
+Running               the Sample</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">1. Ensure
+that the <a href="#database">Database         setup</a> has been
+completed.&nbsp; </span></p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">2. Open <code
+ class="nocolor">DSwithRefCur.sln</code> using Visual Studio .NET from </span><span
+ class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span
+ text="" class="OTN_TEXT"><code class="nocolor">\DSwithRefCur</code>
+folder.&nbsp; </span></p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">3. Edit <code
+ class="nocolor">ConnectionParams.cs</code> file to change the database
+connection parameters i.e.TNSName for&nbsp;         database&nbsp; <br>
+you want to use . Save this file.&nbsp; </span></p>
+      <p><span text="text" class="tabletext">4. Ensure that the
+following .NET         Component References have been added to <code
+ class="nocolor">DSwithRefCur</code> project:&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Data,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Drawing,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Windows.Forms,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.XML, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Oracle.ManagedDataAccess.&nbsp; </span> </p>
+      <blockquote class="tabletext">To add the above .NET
+Components&nbsp; <br>
+a)Go to Menu -&gt;View-&gt; Solution Explorer.&nbsp; <br>
+b)Right click on <code class="nocolor">DSwithRefCur</code> project,
+choose 'Add Reference'.&nbsp; <br>
+c)Choose the above .NET Components from the list displayed.&nbsp; <br>
+d)Click 'Select', then OK.&nbsp; <br>
+e) The chosen .NET component gets added to the project.&nbsp;</blockquote>
+      <p class="paragraph"><span text="" class="OTN_TEXT">5. Build and
+run the sample. </span></p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="58%">
+            <h2 class="heading2"> <a name="descsamples"></a> Description
+of Sample               Files</h2>
+            </td>
+            <td width="42%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><span class="paragraph">Following is the directory structure
+of the </span><span text="" class="OTN_TEXT"><code class="nocolor">DSwithRefCur.zip</code> </span><span
+ class="paragraph"><code class="nocolor"> : </code></span></p>
+      <table border="1" cols="3" width="79%">
+        <tbody>
+          <tr>
+            <td class="tabletext" width="21%"><b>Directory</b></td>
+            <td class="tabletext" width="20%"><b>File Name</b></td>
+            <td class="tabletext" width="59%"><b>Description</b></td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="tabletext" width="21%"><code
+ class="nocolor">DSwithRefCur\doc</code></td>
+            <td class="tabletext" width="20%">Readme.html</td>
+            <td class="tabletext" width="59%">This file</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="20%">otn.css</td>
+            <td class="tabletext" width="59%">This is a cascading
+stylesheet applied             to Readme.html</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="21%"><code class="nocolor">DSwithRefCur\doc\images</code></td>
+            <td colspan="2" class="tabletext">This folder contains
+images used in             the Readme.html file</td>
+          </tr>
+          <tr>
+            <td class="tabletext" rowspan="5" width="21%" colspan="1"><code
+ class="nocolor">DSwithRefCur\src</code></td>
+            <td class="tabletext" width="20%">ConnectionParams.cs</td>
+            <td class="tabletext" width="59%">This C# file contains
+parameters             for database connection</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="20%">ViewProducts.cs</td>
+            <td class="tabletext" width="59%">This C# file contains
+source code             for UI for this sample application and its
+functionality</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="20%">DSwithRefCur.csproj</td>
+            <td class="tabletext" width="59%">C# project file</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="20%">ViewProducts.resx</td>
+            <td class="tabletext" width="59%">.NET XML Resource
+Template (this             file gets automatically generated when a
+Visual Studio Project is             created)</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">DSwithRefCur.sln</td>
+            <td style="vertical-align: top;">Microsoft Visual Studio
+Solution</td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="tabletext" width="21%"><code
+ class="nocolor">DSwithRefCur\Setup</code></td>
+            <td class="tabletext" width="20%">DatabaseSetup.sql</td>
+            <td class="tabletext" width="59%">This is a SQL script file
+that creates             tables and populate them with sample data.</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="20%">StoredProcedure.sql</td>
+            <td class="tabletext" width="59%">This is a SQL file that
+creates 'ODPNet'             Package</td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+				</tr>
+			
+  </tbody> 		
+</table>
+	
+</body>
+</html>
