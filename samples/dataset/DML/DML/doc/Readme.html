@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Manipulate Products Sample - DML Operations on DataSet Through
+ODP.NET Using C# - Readme</title>
+		 		
+  <link rel="stylesheet" href="otn.css" type="text/css">
+</head>
+<body bgcolor="#ffffff">
+<table width="100%" align="center">
+  <tbody>
+    <tr>
+      <td width="100%">
+      <h1 class="heading1"><a name="SAMPLE_NAME"></a>Manipulate
+Products Sample         - DML Operations on DataSet Through <font
+ size="+2">ODP.NET Using C#</font></h1>
+      <h2 class="heading2">Table of Contents</h2>
+      <ul class="list">
+        <li><a href="#objective">Objective of the Sample Application</a></li>
+        <li><a href="#overview">Overview of the Sample Application</a> </li>
+        <li> <a href="#usernotes">User Notes with Screen Shots </a></li>
+        <li><a href="#software">Required Software</a></li>
+        <li><a href="#extract">Extracting the Sample</a></li>
+        <li><a href="#database">Database Setup</a></li>
+        <li><a href="#prepare">Preparing and Running the sample</a></li>
+        <li> <a href="#descsamples">Description of Sample Files</a></li>
+      </ul>
+      <table border="0" width="96%" height="22">
+        <tbody>
+          <tr>
+            <td width="62%">
+            <h2 class="heading2"><a name="objective"></a> Objective of
+the Sample               Application</h2>
+            </td>
+            <td width="38%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tabletext">The purpose of this sample application is to
+demonstrate how Data Manipulation Language (DML) operations on DataSet
+can be done         through Oracle Data Provider for .NET (ODP.NET)
+using C#. </p>
+      <table border="0" width="96%">
+        <tbody>
+          <tr>
+            <td width="62%">
+            <h2 class="heading2"> <a name="overview"></a>Overview of
+the Sample               Application</h2>
+            </td>
+            <td width="38%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="tabletext">ODP.NET offers faster and reliable access to
+Oracle Database by using Oracle Native APIs. ODP.NET provides features
+to access         any .NET application. The data access through ODP.NET
+can be done using         a collection of classes contained in <code
+ class="nocolor">Oracle.ManagedDataAccess</code> assembly. Figure 1.1
+describes how data is accessed using ODP.NET.&nbsp; </p>
+      <p class="tabletext"><img src="images/tech2.gif"></p>
+      <p class="tabletext"><code class="nocolor">DataSet</code> is a
+major component of ADO .NET.         It is an in-memory cache of the
+data retrieved from the database. <code class="nocolor">OracleDataAdapter</code>&nbsp;
+represents a set of data commands and a database connection that are
+used to fill the <code class="nocolor">DataSet</code> based on the query
+given.&nbsp; <code class="nocolor">OracleCommand</code> represents SQL
+statements to execute against datasource. <code class="nocolor">OracleConnection</code>
+is used to build the database connection.&nbsp; </p>
+      <p class="tabletext">&nbsp;When this C# sample is run, a list of
+existing products from database appears in a tabular format. The user
+can change         product details by overwriting existing values. To
+insert new product         details the user can navigate to the end of
+the table and enter new product         details. When data in the <code
+ class="nocolor">DataGrid</code> (Data         displayed in tabular
+format) is changed, the changes can be saved by clicking the 'Save'
+button. The 'Update' method of the <code class="nocolor">OracleDataAdapter</code>
+is called to resolve changes from <code class="nocolor">DataSet</code>
+back to the data source, therefore commiting the changes. This
+demonstrates DML operations on a <code class="nocolor">DataSet</code>
+through Oracle         Data Provider for .NET (ODP.NET). </p>
+      <p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="usernotes"></a> User Notes
+with Screen               Shots</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph"> Back To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p class="tabletext"><span text="" class="OTN_TEXT">When this
+sample application         is run, a list of Products from database is
+displayed as shown in <code class="nocolor">figure         1.2</code>,&nbsp;
+The user can add new products by appending new data         in the <code
+ class="nocolor">DataGrid</code> displayed, also the user can update the
+existing&nbsp;data for products by overwriting the existing values. To
+commit changes the         user can click the 'Save' button.&nbsp;On
+clicking the 'Close' button,         the application gets closed.&nbsp;</span> </p>
+      <p><span class="OTN_TEXT"><img src="images%5Cscreenshot.gif"
+ height="416" width="799"><br>
+      </span></p>
+      <p><code class="nocolor">Figure 1.2: Screen shot for Manipulate
+Products Sample&nbsp; </code></p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="software"></a> Required
+Software</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>
+          <p><span text="text" class="tabletext">Visual C# installed
+with Visual
+Studio 2005/2008/2010/2012.</span></p>
+        </li>
+        <li>
+          <p><span text="text" class="tabletext"><font
+ face="Arial,Helvetica">Oracle11g             Database or higher running
+SQL*Net TCP/IP listener (can be downloaded <a
+ href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">here</a> )</font> </span></p>
+        </li>
+        <li>
+          <p><span text="text" class="tabletext"><font
+ face="Arial,Helvetica">Oracle             Data Provider for .NET
+(ODP.NET) (can be downloaded <a
+ href="http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html">here</a> )</font></span> </p>
+        </li>
+      </ul>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="extract"></a> Extracting the
+Sample </h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="paragraph"><span text="" class="OTN_TEXT">Unzip <code
+ class="nocolor">DMLOperOnDS.zip</code> using Winzip or command utility
+to your convenient directory </span><span class="OTN_TEXT">referred
+to as </span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span
+ text="" class="OTN_TEXT">.         Extraction of the zip file
+results&nbsp;in the creation of <code class="nocolor">'DMLOperOnDS'</code>
+directory.&nbsp; </span><span class="OTN_TEXT">Refer <a
+ href="#descsamples">Description         of Sample Files</a> section for
+more details.&nbsp;</span> &nbsp; &nbsp; </p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="database"></a> Database Setup</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><font face="Arial, Helvetica, sans-serif">Connect to your
+database as         any user and run the script <code class="nocolor">&lt;Extract_Dir&gt;\DMLOperOnDS\Setup\DatabaseSetup.sql</code>
+at the&nbsp;</font><font face="Arial, Helvetica, sans-serif">SQL prompt</font> <br>
+      <tt><font face="Arial, Helvetica, sans-serif"><span class="code">SQL&gt;
+@</span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span
+ class="code">\DMLOperOnDS\Setup\DatabaseSetup.sql</span></font></tt> </p>
+      <p><span class="tabletext">This script will prompt for the
+username, password         and connectstring. You may choose any
+existing username. <code class="nocolor">Products</code> table will get
+created in specified users schema. </span></p>
+      <p>&nbsp;
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="61%">
+            <h2 class="heading2"> <a name="prepare"></a> Preparing and
+Running the Sample</h2>
+            </td>
+            <td width="39%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">1. Ensure
+that the <a href="#database">Database         setup</a> has been
+completed.&nbsp; </span></p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">2. Open <code
+ class="nocolor">DMLOperOnDS.sln</code> using Visual Studio .NET from </span><span
+ class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span
+ text="" class="OTN_TEXT"><code class="nocolor">\DMLOperOnDS</code>
+folder.&nbsp; </span></p>
+      <p class="paragraph"><span text="" class="OTN_TEXT">3. Edit <code
+ class="nocolor">ConnectionParams.cs</code> file to change the database
+connection parameters i.e.Username, Password,         TNSName for
+database .You need to input the same values of connection
+parameters as given while doing the <a href="#database">Database Setup </a>.
+Save this file. </span></p>
+      <p></p>
+      <p><span text="text" class="tabletext">4. Ensure that the
+following .NET         Component References have been added to <code
+ class="nocolor">DMLOperOnDS</code> project:&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Data,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Drawing,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+System.Windows.Forms,&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.XML, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Oracle.ManagedDataAccess.&nbsp; </span> </p>
+      <blockquote class="tabletext">To add the above .NET
+Components&nbsp; <br>
+a)Go to Menu -&gt;View-&gt; Solution Explorer.&nbsp; <br>
+b)Right click on <code class="nocolor">DMLOperOnDS</code> project,
+choose 'Add Reference'.&nbsp; <br>
+c)Choose the above .NET Components from the list displayed.&nbsp; <br>
+d)Click 'Select', then OK.&nbsp; <br>
+e) The chosen .NET component gets added to the project.&nbsp;</blockquote>
+      <p class="paragraph"><span text="" class="OTN_TEXT">5. Build and
+run the sample. </span></p>
+      <table border="0" width="100%">
+        <tbody>
+          <tr>
+            <td width="58%">
+            <h2 class="heading2"> <a name="descsamples"></a> Description
+of Sample               Files</h2>
+            </td>
+            <td width="42%" align="right"> <a href="#SAMPLE_NAME"
+ class="paragraph">Back             To Top</a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><span class="paragraph">Following is the directory structure
+of the </span><span text="" class="OTN_TEXT"><code class="nocolor">DMLOperOnDS.zip</code> </span><span
+ class="paragraph"><code class="nocolor"> : </code></span></p>
+      <table border="1" cols="3" width="98%" class="tabletext">
+        <tbody>
+          <tr>
+            <td width="21%"><b>Directory</b></td>
+            <td width="19%"><b>File Name</b></td>
+            <td width="60%"><b>Description</b></td>
+          </tr>
+          <tr>
+            <td rowspan="2" class="OTN_TEXT" width="21%"><code
+ class="nocolor">DMLOperOnDS\doc</code></td>
+            <td class="tabletext" width="19%">Readme.html</td>
+            <td class="tabletext" width="60%">This file</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">otn.css</td>
+            <td class="tabletext" width="60%">This is a cascading
+stylesheet applied             to Readme.html</td>
+          </tr>
+          <tr>
+            <td class="OTN_TEXT" width="21%"><code class="nocolor">DMLOperOnDS\doc\images</code></td>
+            <td width="19%" class="tabletext">*.gif</td>
+            <td width="60%" class="tabletext">This folder contains
+images used in             the Readme.html file</td>
+          </tr>
+          <tr>
+            <td class="OTN_TEXT" rowspan="5" width="21%" colspan="1"><code
+ class="nocolor">DMLOperOnDS\src\</code><code class="nocolor"></code></td>
+            <td class="tabletext" width="19%">ConnectionParams.cs</td>
+            <td class="tabletext" width="60%">This C# file contains
+parameters for             database connection</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">ManipulateProducts.cs</td>
+            <td class="tabletext" width="60%">This C# file contains
+source code             for UI for sample application and its
+functionality</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">DMLOperOnDS.csproj</td>
+            <td class="tabletext" width="60%">C# project file</td>
+          </tr>
+          <tr>
+            <td class="tabletext" width="19%">ManipulateProducts.resx</td>
+            <td class="tabletext" width="60%">.NET XML Resource
+Template (this file             gets automatically generated when a
+Visual Studio Project is created)</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">DMLOperOnDS.sln</td>
+            <td style="vertical-align: top;">Visual Studio Solution</td>
+          </tr>
+          <tr>
+            <td class="OTN_TEXT" width="21%"><code class="nocolor">DMLOperOnDS\Setup</code></td>
+            <td class="tabletext" width="19%">DatabaseSetup.sql</td>
+            <td class="tabletext" width="60%">This is a SQL script
+file&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+				</tr>
+			
+  </tbody> 		
+</table>
+	
+</body>
+</html>
