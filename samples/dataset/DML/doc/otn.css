@@ -1,0 +1,89 @@
+.heading1 {
+        font-family: Arial, Helvetica, sans-serif;
+	font-size:140%;
+	color:#336699;
+	background-color : #FFFFFF;
+        font-weight: bold;	
+	border : solid #CCCC99;
+	border-width : 0px 0px 2px 0px;
+}
+
+.heading2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:110%;
+	color:#336699;
+	background-color : #FFFFFF;
+        font-weight: bold;	
+	border : solid #cccc99;
+	border-width : 0px 0px 1px 0px;
+}
+
+.heading3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:90%;
+	color:#336699;
+	background-color : #FFFFFF;
+        font-weight: bold;	
+	width : 100%;
+}
+
+.heading4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#000000;
+	background-color : #FFFFFF;
+        font-weight: bold;
+	width : 100%;
+}
+
+.paragraph, .tabletext {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#000000;
+	background-color : #FFFFFF;
+}
+
+.list {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#000000;
+	background-color : #FFFFFF;
+}
+
+.code {
+	color : #336699;
+	font-size:10pt;
+	font-family : "Courier New", "Courier", "monospace";
+}
+
+
+CODE.nocolor {
+	font-family : "Courier New", "Courier", "monospace";
+}
+
+.note {
+    display: block;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 95%;
+    font-style: italic;
+}
+
+.warning {
+    display: block;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 95%;
+}
+
+.ITALICiBodycopy { 
+    font-size: 12px; 
+    line-height: 14px; 
+    font-style: italic; 
+    font-family: Times New Roman,Times, serif; 
+} 
+
+.footer { 
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:10pt;
+	color:#000000;
+	background-color : #FFFFFF;
+} 
