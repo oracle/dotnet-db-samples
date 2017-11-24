@@ -5,7 +5,7 @@ Below is a list of topics that the samples cover along with their locations:
 
 To run the samples, follow these directions:
 1) Modify the Data Source attribute in the connection strings to connect to an Oracle database via Easy Connect, TNS connect descriptor, or TNS alias.
-2) Mos of these samples use the SCOTT schema. The create scripts for SCOTT schema are located here: https://github.com/oracle/dotnet-db-samples/tree/master/schemas
+2) Most of these samples use the SCOTT schema. The create scripts for SCOTT schema are located here: https://github.com/oracle/dotnet-db-samples/tree/master/schemas
 3) Add Oracle.ManagedDataAccess.dll to the sample application.
 4) Read <GitHub .NET samples directory>\doc\Readme.html, if any. 
 
