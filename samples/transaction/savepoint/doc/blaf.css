@@ -1,0 +1,189 @@
+
+<link rel="stylesheet" href="blaf.css" type="text/css">
+.GlossaryItem {
+    color : #008080;
+    background-color : #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+BODY, P, LI, UL, OL, TD {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#000000;
+	background-color : #FFFFFF;
+}
+
+.OTN_TEXT {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#000000;
+	background-color : #FFFFFF;
+}
+
+/* Headers 1-3                                          */
+/* Added H4 -rs                                         */
+/* Changed border-width to 2px from thin - for NS4 - rs */
+H1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:140%;
+	color:#336699;
+	background-color : #FFFFFF;
+	border : solid #CCCC99;
+	border-width : 0px 0px 2px 0px;
+
+}
+
+H2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:110%;
+	color:#336699;
+	background-color : #FFFFFF;
+	border : solid #cccc99;
+	border-width : 0px 0px 1px 0px;
+}
+
+H3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:90%;
+	color:#336699;
+	background-color : #FFFFFF;
+	width : 100%;
+}
+
+H4 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:11pt;
+	color:#336699;
+	background-color : #FFFFFF;
+      font-weight: bold;
+	width : 100%;
+}
+
+/* Code in color */
+.CODE {
+	color : #336699;
+	font-family : "Courier New", "Courier", "monospace";
+}
+
+/*Code with no color */
+CODE.nocolor {
+	font-family : "Courier New", "Courier", "monospace";
+}
+
+P.indent {
+	text-indent: 9%;
+}
+
+.mediumtext {
+	font-size:80%;
+}
+
+.smalltext {
+	font-size:75%;
+}
+
+.tinytext {
+	font-size:70%;
+}
+
+
+/* Display a related topics heading without having to   */
+/* type it.						              */
+
+p.RelatedTopics {
+    display:block;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-weight: bold;
+    font-size: 125%;
+    background-color: #ffffcc;
+}
+
+/* Note and warning                                     */
+/* It appears ICE doesn't support the first-line pseudo */
+/* element needed to format note and warning properly.  */
+/* In addition, it appears the border property does not */
+/* appear to work.					        */
+
+/* We are investigating how to properly format the Note */
+/* and Warning. We would like them to really standout.  */
+
+p.note {
+    display: block;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 95%;
+; font-style: italic
+}
+
+p.warning {
+    display: block;
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 95%;
+}
+
+/* Modify size to match body font 			        */
+/* Should pre have an indent?				        */
+/* Removed indent - rs                                  */
+
+pre {
+    font-family: "Courier New", Courier, mono;
+    font-size: 95%;
+}
+
+/* This causes entries in lists to line up with an even */
+/* left edge 						        */
+
+ul {list-style: outside;}
+ol {list-style: outside;}
+
+/* A little extra vertical space below a <li> 		  */
+/* removed padding-bottom: 1% - buggy in NS4 - rs       */
+
+/* GUI tag is applied to names of user interface 	  */
+/* elements. This should be an inline element 		  */
+/* (such as code) 					        */
+
+.GUITag {
+    font-family: Arial, Helvetica, Geneva, sans-serif;
+    font-size: 95%;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Property Name tag is applied to names of component   */
+/* properties.  This should be an inline element 	  */
+/* (such as code) 					        */
+
+.PropertyName {
+    font-family: "Courier New", Courier, mono;
+    font-style: normal;
+}
+
+/* Color change for glossary items 			        */
+
+.GlossaryItem {
+    color : #008080;
+    background-color : #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/********************************************************/
+/* Dreamweaver 4.0 doesn't understand the before 	  */
+/* pseudoclass, so these are at the end, allowing you to*/
+/* use the other classes from within Dreamweaver.	  */
+/********************************************************/
+
+/* This will put the string "Related Topics" on a line  */
+/*  before the related topics links.  Same for note and */
+/* warning.					                    */
+
+p.RelatedTopics:before {content: "Related Topics"};
+p.note:before{content: "Note:  "};
+p.warning:before{content: "Warning:  "};
+
+/********************************************************/
+/* @page printing issues 				        */
+/* In this section we can put @page commands to control */
+/* the properties used printed documents, such as font  */
+/* size (in pts), where to break pages, etc. 		  */
+/********************************************************/

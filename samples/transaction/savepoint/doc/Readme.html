@@ -1,0 +1,328 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.79 [en] (Windows NT 5.0; U) [Netscape]">
+  <meta name="Author" content="Jagriti">
+  <title>ODP.NET - Savepoint Sample -Readme</title>
+  <link rel="stylesheet" href="blaf.css" type="text/css">
+</head>
+<body basefont="" face="arial, verdana, courier" size="4"
+ color="#FFFFFF">
+&nbsp;
+<table width="100%">
+  <tbody>
+    <tr>
+      <td valign="top" width="1000">
+      <h1> <a name="header"></a>Performing Nested Transactions using
+Savepoints in Oracle Data Provider for .NET (ODP.NET)</h1>
+      <table border="0" width="241" height="20">
+        <tbody>
+          <tr>
+            <td valign="top" width="290" height="22">
+            <h2> <b>Table of Contents</b></h2>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li> <a href="#objective">Objective of the Sample Application</a></li>
+        <li> <a href="#intro">Overview of the Sample Application</a></li>
+        <li> <a href="#usernotes">User Notes with Screen Shots</a></li>
+        <li> <a href="#software">Required Software</a></li>
+        <li> <a href="#extracting">Extracting the Sample</a></li>
+        <li> <a href="#database">Database Setup</a></li>
+        <li> <a href="#preparing">Preparing and Running the Sample&nbsp;</a></li>
+        <li> <a href="#description">Description of Sample files&nbsp;</a></li>
+      </ul>
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="objective"></a><b>Objective of the Sample
+Application</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="91%">
+        <tbody>
+          <tr>
+            <td>The purpose of this sample is to demonstrate how Nested
+Transactions can be achieved using Savepoint feature in ODP.NET.&nbsp;  
+            <p>The Savepoint feature provides fine-grained control of
+transactions by marking the intermediate points within the transaction.
+Once the Savepoint has been set, the transaction can be rolled back to
+that Savepoint without affecting the preceding work. Through <font
+ face="Courier New, Courier, mono">OracleTransaction</font> class
+provided in <font face="Courier New, Courier, mono">Oracle.ManagedDataAccess.Client</font>Namespace
+with ODP.NET, the rollback operation to a particular Savepoint can be
+done.&nbsp;</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="intro"></a><b>Overview of the Sample
+Application</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="98%">
+        <tbody>
+          <tr>
+            <td valign="top" height="202">Using a C# console
+application, this sample demonstrates:&nbsp;
+            <ul>
+              <li> How to create Savepoints in a transaction</li>
+              <li> How to rollback upto a particular Savepoint in a
+transaction</li>
+              <li> How to commit/rollback a transaction</li>
+            </ul>
+When this sample is run, a database transaction begins. The sample
+inserts a row in the Products table before creating any Savepoints. Then
+three other rows are inserted in Products table. Before inserting each
+of the three rows, a Savepoint is created. The user is displayed the
+names of all Savepoint created. The user is given an option to rollback
+to a particular Savepoint. The user can provide a Savepoint name that
+he wishes to rollback. After rolling back to a particular Savepoint,
+the user can further rollback to other Savepoints (if any) or commit
+the data or rollback completely.This completes the transaction. Hence
+it demonstrates how Nested Transactions are performed using Savepoints
+in ODP.NET.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="usernotes"></a><b>User Notes with Screen Shots</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="97%" height="79">
+        <tbody>
+          <tr>
+            <td valign="top">1. When this sample is run, a console
+application as shown in Figure 1.1 is displayed. A transaction is
+started and data for Product 1 is inserted.The Savepoints "a", "b" and
+"c" are created before inserting data for Product 2, Product 3 and
+Product 4 respectively.
+            <p><img src="images/Screen1.gif"> </p>
+            <p><font face="Courier New, Courier, mono">Figure 1.1
+Displays the               initial screen </font> </p>
+            <p>2. The user can input the savepoint name upto which he
+wishes to rollback the transaction. For eg. If the user inputs "b"
+savepoint then the DML operations upto Savepoint "b" i.e. Insert
+operations for Product 3, Product 4 gets rolled back. The message on
+console is displayed as shown in Figure 1.2.&nbsp; </p>
+            <p><img src="images/Screen2.gif" height="369" width="666"> </p>
+            <p><font face="Courier New, Courier, mono">Figure 1.2
+Displays user               the options for rolling back to a savepoint,
+commit, rollback completely</font> </p>
+            <p>3. The user can further commit the changes or rollback
+to the remaining savepoint (if any), in the above example the user can
+rollback to savepoint "a" or rollback completely.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="software"></a><b>Required Software&nbsp;</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li> Visual C# installed with Visual Studio 2005/2008/2010/2012.</li>
+        <li> Oracle11g Database or higher running SQL*Net TCP/IP listener
+(can be downloaded <a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">here</a>)&nbsp;</li>
+        <li> Oracle Data Provider for .NET (ODP.NET) (can be downloaded <a
+ href="http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html">here</a>)&nbsp;</li>
+      </ul>
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="extracting"></a><b>Extracting the Sample</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Unzip <font face="Courier New, Courier, mono">SavepointSample.zip</font>using
+Winzip or command utility to your convenient directory. Extraction of
+the zip file results&nbsp; in the creation of <font
+ face="Courier New, Courier, mono">Savepoint </font>directory.&nbsp;<br>
+&nbsp; <br>
+&nbsp;
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="database"></a><b>Database Setup&nbsp;</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p>Connect to your database as any user and run the script <font
+ face="Courier New, Courier, mono">Savepoint\Setup\DatabaseSetup.sql</font>
+at the SQL prompt.&nbsp; </p>
+      <p class="code">@&lt;Extract_Dir&gt;\Savepoint\Setup\DatabaseSetup.sql&nbsp;</p>
+      <p>where <font face="Courier New, Courier, mono">&lt;Extract_Dir&gt;</font>
+is the directory where you have extracted the sample.&nbsp; </p>
+      <p>The script creates an user "<font
+ face="Courier New, Courier, mono">oranet</font>" with password "<font
+ face="Courier New, Courier, mono">oranet</font>".&nbsp; </p>
+      <p>It creates PRODUCTS table. This table is not populated with
+any initial data.&nbsp;
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="preparing"></a><b>Preparing and Running the
+Sample</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p>1.Ensure that the <a href="#database">Database setup</a> has
+been completed.&nbsp; </p>
+      <p>2.Open <font face="Courier New, Courier, mono">Savepoint.sln</font>
+using Visual Studio .NET from <font face="Courier New, Courier, mono">&lt;Extract_Dir&gt;\Savepoint</font>
+folder.&nbsp; </p>
+      <p>3.Edit <font face="Courier New, Courier, mono">ConnectionParams.cs</font>
+file to change the database connection parameters i.e.TNSName for
+database you want to use . Save this file.&nbsp; </p>
+      <p>4.Ensure that the following .NET Component References have
+been added to <font face="Courier New, Courier, mono">Savepoint</font>
+project:&nbsp; </p>
+      <ul type="disc">
+        <li> System&nbsp;</li>
+        <li> System.Data</li>
+        <li> Oracle.ManagedDataAccess.</li>
+      </ul>
+To add the above .NET Components&nbsp;
+      <ul type="disc">
+        <li> Go to Menu -&gt;View-&gt; Solution Explorer.</li>
+        <li> Right click on <font face="Courier New, Courier, mono">Savepoint</font>
+project, choose 'Add Reference'.</li>
+        <li> Choose the above .NET Components from the list displayed.</li>
+        <li> Click 'Select', then OK.</li>
+        <li> The chosen .NET component gets added to the project.&nbsp;</li>
+      </ul>
+5. Build and run the sample. <br>
+&nbsp;
+      <table border="0" width="770">
+        <tbody>
+          <tr>
+            <td width="580">
+            <h2> <a name="description"></a><b>Description of Sample
+Files&nbsp;</b></h2>
+            </td>
+            <td width="176">
+            <center><a href="#header">Back To Top</a></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table border="1" cellspacing="0" cellpadding="3" cols="3"
+ width="82%">
+        <tbody>
+          <tr>
+            <td width="20%"><b>Directory</b></td>
+            <td width="25%"><b>File Name</b></td>
+            <td width="55%"><b>Description</b></td>
+          </tr>
+          <tr>
+            <td rowspan="2" width="20%">Savepoint\doc</td>
+            <td width="25%">Readme.html</td>
+            <td width="55%">This file</td>
+          </tr>
+          <tr>
+            <td width="25%">blaf.css</td>
+            <td width="55%">This is a cascading style sheet applied to
+Readme.html</td>
+          </tr>
+          <tr>
+            <td width="20%">Savepoint\doc\images</td>
+            <td width="25%">*.gif</td>
+            <td width="55%">This folder contains images used as
+screenshots in the Readme.html file.</td>
+          </tr>
+          <tr>
+            <td rowspan="5" width="20%" colspan="1">Savepoint\src\</td>
+            <td width="25%">ConnectionParams.cs</td>
+            <td width="55%">This C# file manages the database
+connection used by sample.</td>
+          </tr>
+          <tr>
+            <td width="25%">Savepoint.cs</td>
+            <td width="55%">This C# file contains source code for all
+methods used for creating Savepoints and&nbsp; rollback/commit
+operations.</td>
+          </tr>
+          <tr>
+            <td width="25%">Savepoint.csproj</td>
+            <td width="55%">C# project file</td>
+          </tr>
+          <tr>
+            <td width="25%">Savepoint.csproj.user</td>
+            <td width="55%">Visual Studio Project User Options (this
+file gets automatically generated when a Visual Studio Project is
+created)</td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top;">Savepoint.sln</td>
+            <td style="vertical-align: top;">Visual Studio Solution</td>
+          </tr>
+          <tr>
+            <td width="20%">Savepoint\Setup</td>
+            <td width="25%">DatabaseSetup.sql</td>
+            <td width="55%">This is a SQL script file&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+          &nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
