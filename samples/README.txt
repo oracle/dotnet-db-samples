@@ -8,7 +8,7 @@ You must have managed ODP.NET installed. To run the samples, follow these direct
 
 While these samples are designed for managed ODP.NET, they can use unmanaged ODP.NET by incorporating Oracle.DataAccess.dll and adding the correct namespace references (i.e. using Oracle.DataAccess.Client; using Oracle.DataAccess.Types;).
 
-Below is a list of topics that the samples cover along with their locations:
+Below is a list of topics that the samples cover:
 
 Parameter Array Binding
 =======================
