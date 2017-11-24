@@ -9,6 +9,7 @@ To run the samples, follow these directions:
 3) Add Oracle.ManagedDataAccess.dll to the sample application.
 4) Read <GitHub .NET samples directory>\doc\Readme.html, if any. 
 
+While these samples are building for managed ODP.NET, they can be run with unmanaged ODP.NET by incorporating Oracle.DataAccess.dll into the sample application and adding the correct namespace references (i.e. using Oracle.DataAcces.Client; using Oracle.DataAccess.Types;).
 
 Parameter Array Binding
 =======================
