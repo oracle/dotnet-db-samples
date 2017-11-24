@@ -1,0 +1,313 @@
+<html>
+	<head>
+		<title>RowUpdatingEventHandler and RowUpdatedEventHandler sample using ODP.NET- Readme</title>
+		<link rel="stylesheet" href="otn.css" type="text/css"/>
+	</head>
+	<body bgcolor="#ffffff">
+
+<table width="100%" align="Center">
+  <tbody> 
+  <tr> 
+    <td width="100%"> 
+      <h1 class="heading1"><a name="SAMPLE_NAME"/></a>RowUpdatingEventHandler 
+        and RowUpdatedEventHandler sample using ODP.NET</h1>
+      <h2 class="heading2">Table of Contents</h2>
+      <ul class="list">
+        <li><a href="#objective">Objective of the Sample Application</a></li>
+        <li><a href="#overview">Overview of the Sample Application</a> </li>
+        <li> <a href="#usernotes">User Notes with Screen Shots </a></li>
+        <li><a href="#software">Required Software</a></li>
+        <li><a href="#extract">Extracting the Sample</a></li>
+        <li><a href="#database">Database Setup</a></li>
+        <li><a href="#prepare">Preparing and Running the sample</a></li>
+		<li><a href="#stepsins">Steps in the sample</a></li>
+        <li> <a href="#descsamples">Description of Sample Files</a></li>
+      </ul>
+      <table border="0" width="96%" height="22">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"><a name="objective"/></a> Objective of the Sample 
+              Application</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext">The purpose of this sample application is to demonstrate 
+        how one can trap the <code>OracleRowUpdatingEvent</code> and <code>OracleRowUpdatedEvent</code> 
+        using VB.NET. </p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="overview"/></a>Overview of the Sample 
+              Application</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext">Oracle Data Provider for .NET (ODP.NET) is an implementation 
+        of a data provider for the Oracle database. ODP.NET uses Oracle native 
+        APIs to offer fast and reliable access to Oracle data and features from 
+        any .NET application. ODP.NET is provided in <code>Oracle.ManagedDataAccesss.dll 
+        </code>assembly and provides two namespaces :<br>
+      </p>
+      <ul>
+        <li class="paragraph">The <code>Oracle.ManagedDataAccess.Client</code> namespace 
+          contains ODP.NET classes. </li>
+        <li><span class="paragraph">The </span><code>Oracle.ManagedDataAccess.Types </code><span class="paragraph">namespace 
+          contains the ODP.NET Types. </span><br>
+        </li>
+      </ul>
+      <p><span class="tabletext">Event handling is the mechanism by which .NET 
+        components register themselves with event generators and then get notified 
+        with the help of a callback when the event is fired. ODP.NET too allows 
+        users to register event handlers and get notified when the event of particular 
+        interest occurs. In this application we demonstrate how one can trap the 
+        <code>OracleDataAdapter.RowUpdating</code> and <code>OracleDataAdapter.RowUpdated</code><span class="code"> 
+        </span>events. <code>OracleDataAdapter.RowUpdating </code>event is fired 
+        before a row is updated. <code>OracleDataAdapter.RowUpdated</code><span class="code"> 
+        </span>event is fired after a row </span><span class="tabletext"> is updated. 
+        This allows applications to process this event and initiate appropriate 
+        action. </span> 
+      <p class="tabletext">&nbsp;
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="usernotes"/></a> User Notes with Screen 
+              Shots</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext"><span text class="OTN_TEXT">When this sample application 
+        is run, </span>users should supply a username, password and connect string 
+        to connect to a database. The application creates the required table to 
+        set up this application. By default, both RowUpdating and RowUpdated event 
+        handlers are enabled. Users can use the radio buttons to enable, disable 
+        the event handlers. They must click the &quot;Apply&quot; button to carry 
+        out actual eventHandler registration or de-registration. If the event 
+        handler is enabled and country table is updated then corresponding event 
+        handler code is executed. Code inside the eventHandler function (Subroutine) 
+        prints a line in the status window indicating that the function had been 
+        invoked. </p>
+      <p><span class="OTN_TEXT">
+      <img src="images/image1.jpg" width="567" height="551" ></span></p>
+      <p><code class="nocolor">Figure 1.1: Screen shot of the Main Screen</code></p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="software"/></a> Required Software</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <ul>
+        <li> 
+          <p><span text="text" class="tabletext">VB.NET installed with Visual Studio 
+              2005/2008/2010/2012.</span></p>
+        </li>
+        <li> 
+          <p><span text="text" class="tabletext"><font face="Arial,Helvetica">Oracle11g 
+            Database or higher running SQL*Net TCP/IP listener (can be downloaded
+          <a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">here</a> )</font> 
+            </span></p>
+        </li>
+        <li> 
+          <p><span text="text" class="tabletext"><font face="Arial,Helvetica">Oracle 
+            Data Provider for .NET (ODP.NET) (can be downloaded
+          <a href="http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html">here</a> 
+            )</font></span> </p>
+        </li>
+      </ul>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="extract"/></a> Extracting the Sample 
+            </h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P class="paragraph"><span text class="OTN_TEXT">Unzip <code>RowUpdateEventHandler.zip</code> 
+        using Winzip or command utility to your convenient directory </span><span class="OTN_TEXT">referred 
+        to as </span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span text class="OTN_TEXT">. 
+        Extraction of the zip file results&nbsp;in the creation of <code class="nocolor">'</code><code>RowUpdateEventHandler</code><code class="nocolor">'</code> 
+        directory.&nbsp; </span><span class="OTN_TEXT">Refer <a href="#descsamples">Description 
+        of Sample Files</a> section for more details.&nbsp;</span> &nbsp; &nbsp; 
+      </P>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="database"/></a> Database Setup</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p><font face="Arial, Helvetica, sans-serif">No special database setup is 
+        required. When this application starts it creates the required table </font>'<span class="paragraph"><code>COUNTRYTAB</code></span>' 
+        <span class="paragraph">and inserts necessary data. You must ensure that 
+        the database user has necessary privileges to drop,create and update tables.</span><br>
+      </p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="prepare"/></a> Preparing and Running 
+              the Sample</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P class="paragraph"><span text class="OTN_TEXT">1. Open </span><span text><code>RowUpdateEventHandler.sln</code></span><span text class="OTN_TEXT"> 
+        using Visual Studio .NET from </span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span text class="OTN_TEXT"><code class="nocolor">\</code></span><span text><code>RowUpdateEventHandler\src</code></span><span text class="OTN_TEXT"> 
+        folder.&nbsp; </span></P>
+      <p></p>
+      <p><span text="text" class="tabletext">2. Ensure that the following .NET 
+        Component References have been added to </span><span text><code>RowUpdateEventHandler</code></span> 
+        <span text="text" class="tabletext">project:&nbsp; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oracle.ManagedDataAccess.&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span text="text" class="tabletext">System,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Data,&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Drawing,&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Windows.Forms,&nbsp; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.XML, <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> 
+      <blockquote class="tabletext">To add the reference to above .NET Components&nbsp; 
+        <br>
+        a)Go to Menu ->View-> Solution Explorer.&nbsp; <br>
+        b)Right click on <span text class="OTN_TEXT"><code>RowUpdateEventHandler</code></span> 
+        project, choose 'Add Reference'.&nbsp; <br>
+        c)Choose the above .NET Components from the list displayed.&nbsp; <br>
+        d)Click 'Select', then OK.&nbsp; <br>
+        e) The chosen .NET component gets added to the project.&nbsp;</blockquote>
+      <p class="paragraph"><span text class="OTN_TEXT">4. Build and run the sample. 
+        </span></p>
+      <p> </p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="stepsins"/></a> Steps in the sample</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="paragraph">1. When the Main form of the application appears as 
+        shown in figure 1.1 enter the username , password and connect string as 
+        per your database setting and press &quot;Connect&quot; button.</p>
+      <p class="paragraph">2. You may update Language or Currency columns. Other 
+        columns are not updatable.</p>
+      <p class="paragraph">2. To update the rows in the <code>DataGrid</code> 
+        press &quot;Update&quot; button. You may enable or disable the eventhandlers 
+        by using radio buttons but you must press &quot;Apply&quot; button to 
+        carry out actual handler registration or de-registration process.<br>
+        <br>
+        <b>Note: </b>The database user used to execute this application must have 
+        necessary privileges to create, delete and modify tables.</p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="descsamples"/></a> Description of Sample 
+              Files</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P><span class="paragraph">Following is the directory structure of the </span><span text class="OTN_TEXT"><code>RowUpdateEventHandler.zip</code> 
+        </span><span class="paragraph"><code class="nocolor"> : </code></span></P>
+      <table BORDER COLS=3 WIDTH="98%" class="tabletext" >
+        <tr> 
+          <td width="15%"><b>Directory</b></td>
+          <td width="20%"><b>File Name</b></td>
+          <td width="65%"><b>Description</b></td>
+        </tr>
+        <tr> 
+          <td ROWSPAN="2" class="OTN_TEXT" width="21%"><code class="nocolor">RowUpdateEventHandler\doc</code></td>
+          <td class="tabletext" width="19%">Readme.html</td>
+          <td class="tabletext" width="60%">This file</td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%">otn.css</td>
+          <td class="tabletext" width="60%">Stylesheet used in Readme.html</td>
+        </tr>
+
+        <tr> 
+          <td class="OTN_TEXT" width="21%"><code class="nocolor">RowUpdateEventHandler\doc\images</code></td>
+          <td width="19%" class="tabletext">*.jpg</td>
+          <td width="60%" class="tabletext">This folder contains images used in 
+            the Readme.html file</td>
+        </tr>
+        <tr> 
+          <td class="OTN_TEXT" rowspan="2" width="21%"><code class="nocolor">RowUpdateEventHandler\src</code><code class="nocolor"></code></td>
+          <td class="tabletext" width="19%">RowUpdateEventHandler.sln</td>
+          <td class="tabletext" width="60%">Visual Studio Solution</td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%">RowUpdateEventHandler.suo</td>
+          <td class="tabletext" width="60%">Solution User option (this file gets 
+            automatically generated when a Visual Studio Solution is created)</td>
+        </tr>
+        <tr> 
+          <td class="OTN_TEXT" rowspan="5" width="21%"><code class="nocolor">RowUpdateEventHandler\src\</code><code class="nocolor"></code></td>
+          <td class="tabletext" width="19%">AssemblyInfo.vb</td>
+          <td class="tabletext" width="60%">This file stores information about 
+            generated assembly</td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%">DBAccess.vb</td>
+          <td class="tabletext" width="60%">This file has the code that accesses 
+            database and has the RowUpdating and RowUpdated event handlers</td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%">RowUpdate.vb</td>
+          <td class="tabletext" width="60%">Main window of this application </td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%">RowUpdateEventHandler.vbproj.*</td>
+          <td class="tabletext" width="60%">Visual Studio Project Files (these 
+            files are automatically generated when a Visual Studio Project is 
+            created)</td>
+        </tr>
+        <tr> 
+          <td class="tabletext" width="19%"> 
+            <p>*.resx <br>
+              *.config</p>
+            </td>
+          <td class="tabletext" width="60%">.NET XML Resource Template and configuration 
+            files (these files are automatically generated when a Visual Studio 
+            Project is created)</td>
+        </tr>
+      </table>
+    </td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
