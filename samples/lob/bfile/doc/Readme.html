@@ -1,0 +1,389 @@
+<html>
+	<head>
+		<title>Accessing BFILEs Through ODP.NET Sample- Readme</title>
+		<link rel="stylesheet" href="otn.css" type="text/css"/>
+	</head>
+	<body bgcolor="#ffffff">
+<a name="SAMPLE_NAME"/></a>
+<table width="100%" align="Center">
+  <tbody> 
+  <tr> 
+    <td width="100%"> 
+      <h1 class="heading1"> Accessing BFILEs Through ODP.NET Sample</h1>
+      <h2 class="heading2">Table of Contents</h2>
+      <ul class="list">
+        <li><a href="#objective">Objective of the Sample Application</a></li>
+        <li><a href="#overview">Overview of the Sample Application</a> </li>
+       <li> <a href="#usernotes">User Notes with Screen Shots </a></li>
+        <li><a href="#software">Required Software</a></li>
+        <li><a href="#extract">Extracting the Sample</a></li>
+    	 <li><a href="#database">Database Setup</a></li>
+        <li><a href="#prepare">Preparing and Running the sample</a></li>
+		<li><a href="#steps">Steps in the Sample Application</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+        <li> <a href="#descsamples">Description of Sample Files</a></li>
+      </ul>
+      <table border="0" width="100%" height="32">
+        <tbody> 
+        <tr> 
+          <td width="80%" height="25"> 
+            <h2 class="heading2"><a name="objective"/></a> Objective of the Sample 
+              Application</h2>
+          </td>
+          <td width="20%" align="right" height="25"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext">The purpose of this sample application is to demonstrate:</p>
+      <p class="tabletext">1) How to insert BFILE data through ODP.NET ?</p>
+      <p class="tabletext"> 2) How to view BFILE data through ODP.NET ?</p>
+      <table border="0" width="100%" height="22">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="overview"/></a>Overview of the Sample 
+              Application</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext"> Large Objects (LOBs) are used to store unstructured 
+        data such as text, graphic images, video clips etc. BFILE is a type of 
+        external LOB that is used to store large binary data objects stored in 
+        operating system files outside database tablespaces. BFILE datatype allows 
+        read-only byte stream access to large files on the file system of the 
+        database server. </p>
+      <p class="tabletext">ODP.NET provides support to BFILE though OracleBFile 
+        object type. Unlike Oracle BLOBs and CLOBs, Oracle BFILEs are not updatable 
+        but BFILE locators are updatable.</p>
+      <p class="tabletext">This Visual Basic .NET sample demonstrates accessing 
+        BFILEs through ODP.NET. When this sample is run a window is displayed 
+        through which the user can establish database connection by entering parameters 
+        as per his/her database. After connecting to database successfully, the 
+        user needs to enter the full, qualified path of the location on the database 
+        server where the image file which the user wants to insert resides. On 
+        clicking the &quot;Save Image&quot; button the required database objects 
+        are created and then the image is inserted. To view the inserted image 
+        the user can click &quot;Display Image&quot; button, the image is retrieved 
+        using <code class="nocolor">GetOracleBFile</code> method of <code class="nocolor">OracleDataReader</code> 
+        into an <code class="nocolor">OracleBFile</code> object. Messages are 
+        displayed at each step in the status bar.</p>
+      
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="usernotes"/></a> User Notes with Screen 
+              Shots</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="tabletext">When this sample application is run, a windows application 
+        is displayed. Enter the username, password and connect string as per your 
+        database environment. Click &quot;Connect&quot; button. If the connection 
+        is successfully established then the connection status is displayed as 
+        &quot;connected&quot; as shown in <code class="nocolor">Figure 1.1</code>. 
+      </p>
+      <p class="tabletext"><span class="OTN_TEXT"><img src="images/screen1.gif" width="567" height="561" border="1"> 
+        </span></p>
+      <p><code class="nocolor">Figure 1.1: Screenshot displaying window after connection 
+        was successfully established</code></p>
+      <p class="paragraph">To insert a BFILE, enter the directory path on the 
+        database server where you have copied &quot;<code class="nocolor">poster.gif</code>&quot; 
+        file, in the textbox provided and click &quot;Save Image&quot; button. 
+        See the messages in the status bar. Then click on &quot;Display Image&quot; 
+        button. The image is displayed in the picture box as shown in <code class="nocolor">figure 
+        1.2</code>. </p>
+      <p><img src="images/screen2.gif" width="564" height="556" border="1"></p>
+      <p class="tabletext"><code class="nocolor">Figure 1.2 : Screenshot displaying 
+        saved image from database</code></p>
+      <p class="tabletext">A &quot;Disconnect&quot; button is provided for user 
+        to disconnect the database connection. One can use &quot;Connect&quot; 
+        button again to connect as a different database user. To close this application 
+        the user can click the &quot;Exit&quot; button.</p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="software"/></a> Required Software</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <ul>
+        <li> 
+          <p><span class="paragraph">Visual Basic.NET installed with Visual Studio 
+              2005/2008/2010/2012.</span></p>
+        </li>
+        <li> 
+          <p><span class="paragraph">Oracle11g 
+            Database Enterprise Edition or higher running SQL*Net TCP/IP listener 
+            (can be downloaded
+          <a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">here</a>)</span></p>
+        </li>
+        <li> 
+          <p><span class="paragraph">Oracle Data Provider for .NET (ODP.NET) (can 
+            be downloaded
+          <a href="http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html">here)</a> 
+            . </span></p>
+        </li>
+      </ul>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="extract"/></a> Extracting the Sample 
+            </h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P class="paragraph"><span class="OTN_TEXT">Unzip </span><span class="PropertyName"><code class="nocolor">AccessBFile.zip</code></span><span class="OTN_TEXT"> 
+        using Winzip or command utility to a convenient directory referred to 
+        as </span><span class="PropertyName"><code class="nocolor">&lt;Extract_Dir&gt;</code></span><span class="OTN_TEXT">. 
+        Extraction of the zip file results&nbsp;in the creation of </span><span class="PropertyName"><code class="nocolor">&quot;AccessBFile&quot;</code></span><span class="OTN_TEXT"> 
+        directory.&nbsp; Refer <a href="#descsamples">Description of Sample Files</a> 
+        section for more details.&nbsp;</span> </P>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="database"/></a> Database Setup</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+	  <p class="paragraph">An Oracle database object <code class="nocolor">&quot;Directory&quot; 
+        </code> needs to be created to run this sample. For any database user 
+        to create this object, a special privilege <code class="nocolor">&quot;CREATE ANY DIRECTORY&quot;</code> 
+        needs to be granted by DBA (for eg. SYSTEM database user). </p>
+      <p class="paragraph">To grant this privilege to any normal database user 
+        say <code class="nocolor">scott</code> (in this example), at SQL prompt type the following 
+        command: </p>
+      <p><table border="0" cellspacing="0"  bgcolor="#86a5c3" >
+        <tbody> 
+        <tr> 
+            <td> 
+              <table border="0" cellspacing="0" cellpadding="3"
+ width="100%" bgcolor="#ffffff">
+                <tbody> 
+                <tr> 
+                  
+                <td valign="top" bgcolor="#eaead5" class="CODE"> 
+                  <p><b>Syntax:</b></p>
+                  <p>SQL&gt; CONNECT &lt;DBAUser&gt;/&lt;Password&gt;@&lt;ConnectString&gt;;</p>
+                  <p>SQL&gt; GRANT CREATE ANY DIRECTORY TO &lt;DatabaseUser&gt;;</p>
+                  <p><b>eg.:</b></p>
+                  <p>SQL&gt; CONNECT system/manager@oracle;</p>
+                  <p>SQL&gt; GRANT CREATE ANY DIRECTORY TO scott;</p>
+                  </td>
+                </tr>
+                </tbody> 
+              </table>
+            </td>
+          </tr>
+          </tbody> 
+        </table>
+      <p class="paragraph">Now <code class="nocolor">&quot;Scott&quot;</code> 
+        user can run this sample.</p>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <span class="paragraph"><a name="prepare"/></a></span> 
+              Preparing and Running the Sample</h2>
+          </td>
+          <td width="20%" align="right"> <span class="paragraph"><a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </span></td>
+        </tr>
+        </tbody> 
+      </table>
+      <P class="paragraph">1. Open <code class="nocolor">AccessBFile.sln</code> using Visual Studio 
+        .NET from <code class="nocolor">&lt;Extract_Dir&gt;\AccessBFile</code> folder. </P>
+      <P class="paragraph">2. Ensure that the following .NET Component References 
+        have been added to <code class="nocolor">AccessBFile</code> project: </P>
+      <blockquote> 
+        <p class="paragraph">System, <br>
+          System.Data, <br>
+          System.Drawing, <br>
+          System.Windows.Forms, <br>
+          Oracle.ManagedDataAccess. </p>
+      </blockquote>
+      <p class="paragraph">To add the above .NET Components <br>
+        a)Go to Menu -&gt;View-&gt; Solution Explorer. <br>
+        b)Right click on <code class="nocolor">AccessBFile</code> project, choose 'Add Reference'. 
+        <br>
+        c)Choose the above .NET Components from the list displayed. <br>
+        d)Click 'Select', then OK. <br>
+        e) The chosen .NET component gets added to the project. </p>
+      <P class="paragraph">3. Build and run the sample. </P>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="steps"/></a> Steps in the Sample</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph"> 
+            Back To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <p class="paragraph">1. A sample image,<code class="nocolor"> poster.gif</code> (BFILE) 
+        is provided with this sample. Copy <code class="nocolor">&quot;poster.gif&quot;</code> 
+        image file from <code class="nocolor">&lt;Extract_Dir&gt;\AccessBfile\doc</code> folder to 
+        a directory located on the database server. Note down this directory as 
+        it will be later required in the sample.</p>
+      <p class="paragraph">2. When this sample is run a window with facilities 
+        like establishing database connection and inserting/displaying BFILE is 
+        displayed. </p>
+      <p class="paragraph">3. Ensure that you have completed the <a href="#database">Database 
+        Setup.</a></p>
+      <p class="paragraph">4. Enter appropriate Username, Password, Data Source 
+        in the text boxes and click &quot;Connect&quot; button. If the connection 
+        is successfully established the connection status &quot;connected&quot; 
+        is displayed in green. <span class="note">NOTE: Ensure that the database 
+        user you are using has the <code class="nocolor">&quot;CREATE ANY DIRECTORY&quot;</code> 
+        privilege.</span></p>
+      <p class="paragraph">5. To insert image <code class="nocolor">&quot;poster.gif&quot;</code> 
+        to the database. Enter the full, qualified path of the image where it 
+        is located on the database server. This is the directory path on the database 
+        server you used in Step 1. </p>
+      <p class="paragraph">6. Click &quot;Save Image&quot; button to insert image 
+        to the database. The following steps are taken to insert the image:</p>
+      <ul>
+        <blockquote> 
+          <p class="paragraph">- A database table <code class="nocolor">Test_Bfile</code> with 
+            a column named <code class="nocolor">&quot;photo&quot;</code> of type BFILE is created.</p>
+          <p class="paragraph">- A Directory <code class="nocolor">&quot;BFILEDIR&quot;</code> 
+            is created pointing the path entered by the user in Step. 5.</p>
+          <p class="paragraph">- A single row, containing a BFILE pointer is inserted 
+            to the <code class="nocolor">Test_Bfile</code> table.</p>
+        </blockquote>
+      </ul>
+      <p class="paragraph">7. To display the inserted image from the <code class="nocolor">Test_Bfile</code> 
+        database table. Click on &quot;Display Image&quot; button. The following 
+        steps are taken to display the image:</p>
+      <blockquote> 
+        <blockquote> 
+          <p class="paragraph">- BFILE locator is selected from <code class="nocolor">Test_Bfile</code> 
+            Table and stored in <code class="nocolor">OracleBFile</code>.</p>
+          <p class="paragraph">- A memory stream is opened on the selected <code class="nocolor">OracleBFile</code> 
+            (BFILE locator).</p>
+          <p class="paragraph">- Image file is fetched and shown in a Picture 
+            Box.</p>
+        </blockquote>
+      </blockquote>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="trouble"/></a> Troubleshooting</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P class="paragraph">1. In case the image is not displayed correctly, then 
+        check the path entered in the text box. The image &quot;poster.gif&quot; 
+        must be stored on the database server. In case your database server is 
+        installed on Windows operating system then enter the path as for e.g. 
+        <code class="nocolor">e:\myimages</code>. If your database server is on 
+        a Unix/Linux operating system then enter the path as for e.g.<code class="nocolor"> 
+        /home/myimages</code>. Where <code class="nocolor">myimages</code> could 
+        be any directory as per your machine settings.</P>
+      <P class="paragraph">2. In case you wish to use some other image other than 
+        <code class="nocolor">&quot;poster.gif&quot;</code>, then you will have 
+        to change the image name in the code. The image name <code class="nocolor">&quot;poster.gif&quot;</code> 
+        is hardcoded in the code in <code class="nocolor">Bfile.vb</code> file. 
+        This sample provides facility to only view Binary files like images etc.</P>
+      <table border="0" width="100%">
+        <tbody> 
+        <tr> 
+          <td width="80%"> 
+            <h2 class="heading2"> <a name="descsamples"/></a> Description of Sample 
+              Files</h2>
+          </td>
+          <td width="20%" align="right"> <a href="#SAMPLE_NAME" class="paragraph">Back 
+            To Top</a> </td>
+        </tr>
+        </tbody> 
+      </table>
+      <P><span class="paragraph">Following is the directory structure of the </span><code class="nocolor">AccessBfile.zip</code><span class="paragraph"><code class="nocolor"> 
+        : </code></span></P>
+      <table width="99%" border="1">
+        <tr> 
+          <td width="17%" align="center" class="tabletext"> <b>Directory</b> </td>
+          <td width="16%" class="tabletext" align="center"> <b>Files</b> </td>
+          <td width="67%" class="tabletext" align="center"> <b>Description</b> 
+          </td>
+        </tr>
+        <tr> 
+          <td rowspan="3" class="tabletext" width="17%"> <code class="nocolor">AccessBFile\doc\</code></td>
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">Readme.html</code></td>
+          <td width="67%" height="21" class="tabletext"> This file</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">otn.css</code></td>
+          <td width="67%" height="21" class="tabletext">Cascading Stylesheet applied to Readme.html</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">poster.gif</code></td>
+          <td width="67%" height="21" class="tabletext">A sample image file used in this sample.</td>
+        </tr>
+        <tr> 
+          <td width="17%" class="tabletext"><code class="nocolor">AccessBFile\doc\images\</code></td>
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">*.gif</code></td>
+          <td width="67%" height="21" class="tabletext">Screenshots used in Readme.html 
+            file </td>
+        </tr>
+        <tr> 
+          <td rowspan="6" class="tabletext" width="17%"><code class="nocolor">AccessBFile\src\</code></td>
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">AcessBFile.sln</code></td>
+          <td width="67%" height="21" class="tabletext">Visual Studio Solution</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">AcessBFile.suo</code></td>
+          <td width="67%" height="21" class="tabletext">Solution User option (this 
+            file gets automatically generated when a Visual Studio Solution is 
+            created).</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">Bfile.vb</code></td>
+          <td width="67%" height="21" class="tabletext">The source file containing 
+            the UI and all the methods that are used for accessing a BFILE.</td>
+        </tr>
+        <tr>
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">Bfile.resx</code></td>
+          <td width="67%" height="21" class="tabletext">.NET XML resource template</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">AccessBfile.vbproj</code></td>
+          <td width="67%" height="21" class="tabletext"> VB project file</td>
+        </tr>
+        <tr> 
+          <td width="16%" height="21" class="tabletext"><code class="nocolor">AccessBfile.vbproj.user</code></td>
+          <td width="67%" height="21" class="tabletext">Visual Studio Project 
+            User Options (this file gets automatically generated when a Visual 
+            Studio Project is created)</td>
+        </tr>
+      </table>
+      <BR/>
+    </td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
