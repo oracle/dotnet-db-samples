@@ -54,9 +54,18 @@ Sample 3: Demonstrates DML operations on LOB columns.
 Sample 4: Demonstrates how to populate a DataSet from multiple output Ref Cursors from a stored procedure.
 Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET).
 
+.NET Core
+=========
+Data Reader Sample: Demonstrates how to connect and retrieve data using ODP.NET Core
+
 Event Handler
 =============
 Sample 1: Demonstrates how to trap the OracleRowUpdatingEvent and OracleRowUpdatedEvent using VB.NET.
+
+JSON
+====
+Select JSON Sample: Demonstrates row insert into and query against a JSON table.
+Select JSON CLOB Sample:  Demonstrates row insert into and query against a JSON table using CLOB storage.
 
 LOB 
 ===
