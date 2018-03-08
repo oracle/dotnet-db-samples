@@ -56,7 +56,8 @@ Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET
 
 .NET Core
 =========
-Data Reader Sample: Demonstrates how to connect and retrieve data using ODP.NET Core
+ASP.NET Core Sample: Demonstrates a simple ASP.NET Core web app to connect and retrieve data
+Data Reader Sample: Demonstrates how to connect and retrieve data using ODP.NET Core via a console app
 
 Event Handler
 =============
