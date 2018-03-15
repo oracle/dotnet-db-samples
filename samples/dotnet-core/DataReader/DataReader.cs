@@ -30,7 +30,7 @@ namespace ODPCoreDataReader
             // results from an OracleDataReader to a console
 
             //Create a connection to Oracle			
-            string conString = "Pooling=false;User Id=hr;Password=<password>;" +
+            string conString = "User Id=hr;Password=<password>;" +
 
             //How to connect to an Oracle DB without SQL*Net configuration file
             //  also known as tnsnames.ora.
