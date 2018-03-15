@@ -51,13 +51,11 @@ namespace ODPCoreASPCore
                 // to connect, query, and return results to a web page
 
                 //Create a connection to Oracle			
-                //string conString = "Pooling=false;User Id=hr;Password=<password>;" +
-                string conString = "Pooling=false;User Id=hr;Password=hr;" +
+                string conString = "User Id=hr;Password=<password>;" +
 
                 //How to connect to an Oracle DB without SQL*Net configuration file
                 //  also known as tnsnames.ora.
-                //"Data Source=<ip or hostname>:1521/<service name>;";
-                "Data Source=localhost:1521/orclpdb;";
+                "Data Source=<ip or hostname>:1521/<service name>;";
 
                 //How to connect to an Oracle DB with a DB alias.
                 //Uncomment below and comment above.
@@ -70,6 +68,7 @@ namespace ODPCoreASPCore
                         try
                         {
                             con.Open();
+                            cmd.BindByName = true;                            
 
                             //Use the command to display employee names from 
                             // the EMPLOYEES table
@@ -78,7 +77,6 @@ namespace ODPCoreASPCore
                             // Assign id to the department number 50 
                             OracleParameter id = new OracleParameter("id", 50);
                             cmd.Parameters.Add(id);
-                            cmd.BindByName = true;
 
                             //Execute the command and use DataReader to display the data
                             OracleDataReader reader = cmd.ExecuteReader();
