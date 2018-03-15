@@ -1,4 +1,3 @@
-
 /* Copyright (c) 2018, Oracle and/or its affiliates. All rights reserved. */
 
 /******************************************************************************
@@ -48,6 +47,7 @@ namespace ODPCoreDataReader
                     try
                     {
                         con.Open();
+                        cmd.BindByName = true;                        
 
                         //Use the command to display employee names from 
                         // the EMPLOYEES table
@@ -56,7 +56,6 @@ namespace ODPCoreDataReader
                         // Assign id to the department number 50 
                         OracleParameter id = new OracleParameter("id", 50);
                         cmd.Parameters.Add(id);
-                        cmd.BindByName = true;
 
                         //Execute the command and use DataReader to display the data
                         OracleDataReader reader = cmd.ExecuteReader();
