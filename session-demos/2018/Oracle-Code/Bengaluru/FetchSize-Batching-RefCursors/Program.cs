@@ -68,7 +68,7 @@ namespace FetchSize_Batching_and_RCs
                 ts = end_time - start_time;
                 double ts2 = Math.Round(ts.TotalSeconds, 3);
 
-                Console.WriteLine("Fetch Size = 100: " + ts2 + " seconds");
+                Console.WriteLine("Fetch Size = 107: " + ts2 + " seconds");
                 Console.WriteLine();
 
                 Console.WriteLine("Percent difference: " +
