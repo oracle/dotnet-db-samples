@@ -21,7 +21,7 @@ namespace testcommandlineapp
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 //Needed only for Oracle Application Container Cloud Service
-                //.UseUrls("http://0.0.0.0:"+ Environment.GetEnvironmentVariable("PORT"))
+                .UseUrls("http://0.0.0.0:"+ Environment.GetEnvironmentVariable("PORT"))
                 .Build();
     }
 }
