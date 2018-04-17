@@ -1,0 +1,6 @@
+{
+ "runtime":{
+ "majorVersion":"2.0.0-runtime"
+ },
+ "command": "dotnet simplewebapp.dll"
+}
