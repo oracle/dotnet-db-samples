@@ -1,0 +1,7 @@
+{
+"memory":"1G",
+"instances":1,
+"environment": {
+        "CONNECTSTRING": "User Id=hr;Password=mypass; Data Source=X.X.X.X:1521/PDB1.subXXXXXXXX.yourvcn.oraclevcn.com;"
+    }X
+}
