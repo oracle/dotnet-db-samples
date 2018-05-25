@@ -24,9 +24,9 @@ Sample 1: Demonstrates how to use the OracleClientFactory class.
 
 Command Builder
 ===============
-Sample 1: Demonstrates CommandBuilder's SchemaSeparator property.
-Sample 2: Demonstrates CommandBuilders's QuoteIdentifier method.
-Sample 3: Demonstrates CommandBuilders's UnquoteIdentifier method.
+Sample 1: Demonstrates OracleCommandBuilder's SchemaSeparator property.
+Sample 2: Demonstrates OracleCommandBuilders's QuoteIdentifier method.
+Sample 3: Demonstrates OracleCommandBuilders's UnquoteIdentifier method.
 
 Connection
 ==========
