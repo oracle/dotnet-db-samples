@@ -36,7 +36,7 @@ Sample 3: Demonstrates all variations of OracleConnection's GetSchema(string, st
 
 Connection String Builder
 =========================
-Sample 1: Demonstrates how to use the ConnectionStringBuilder class.
+Sample 1: Demonstrates how to use the OracleConnectionStringBuilder class.
 
 Data Reader
 ===========
@@ -83,11 +83,11 @@ Ref Cursor
 ==========
 Sample 1: Demonstrates how a REF Cursor is obtained as an OracleDataReader.
 Sample 2: Demonstrates how a REF Cursor is obtained as an OracleDataReader through the use of an OracleRefCursor object.
-Sample 3: Demonstrates how multiple Ref Cursors can be accessed by a single OracleDataReader.
-Sample 4: Demonstrates how a DataSet can be populated from a Ref Cursor. The sample also demonstrates how a Ref Cursor can be updated.
+Sample 3: Demonstrates how multiple REF Cursors can be accessed by a single OracleDataReader.
+Sample 4: Demonstrates how a DataSet can be populated from a REF Cursor. The sample also demonstrates how a REF Cursor can be updated.
 Sample 5: Demonstrates how a DataSet can be populated from an OracleRefCursor object.
-Sample 6: Demonstrates how to populate a DataSet with multiple Ref Cursors selectively.
-Sample 7: Demonstrates how to selectively obtain OracleDataReader objects from Ref Cursors.
+Sample 6: Demonstrates how to populate a DataSet with multiple REF Cursors selectively.
+Sample 7: Demonstrates how to selectively obtain OracleDataReader objects from REF Cursors.
 
 Statement Cache
 ===============
@@ -95,6 +95,6 @@ Sample 1: Demonstrates performance improvement when statement caching is enabled
 
 Transaction
 ===========
-Sample 1: Demonstratew the usage of EnlistTransaction API.
+Sample 1: Demonstrates the usage of EnlistTransaction API.
 Sample 2: Demonstrates the usage of TransactionScope.
 Sample 3: Demonstrates nested transactions with savepoints.
