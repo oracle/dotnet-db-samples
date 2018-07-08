@@ -9,6 +9,6 @@ Or run the following command with Windows administrator privileges when using un
     OraProvCfg /action:register /product:odp /component:perfcounter /providerpath:"<directory path>\oracle.dataaccess.dll“
 OraProvCfg.exe is not available in ODP.NET 12.2 and earlier NuGet releases.
 
-In ODP.NET 18 and higher, all installs, including NuGet, will have a batch script for registering the counters.
+In ODAC 18c Release 2 and higher, all installs, including NuGet, will have a batch script for registering the counters.
 
 In the .NET configuration file, set the PerformanceCounters parameter to indicate which counters to monitor. Refer to the ODP.NET documentation of the specific version for these counter values. Optionally, you may set the poolName parameter for each pool you wish to track. Setting a pool name makes it easier to identify the pool you are monitoring.
