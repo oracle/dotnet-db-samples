@@ -28,7 +28,7 @@ namespace ODP_Core_Config_API
         {
             // This sample demonstrates how to use ODP.NET Core Configuration API
 
-            // Add connect descriptors and net service names entires.
+            // Add connect descriptors and net service names entries.
             OracleConfiguration.OracleDataSources.Add("orclpdb", "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<hostname or IP>)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=<service name>)(SERVER=dedicated)))");
             OracleConfiguration.OracleDataSources.Add("orcl", "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<hostname or IP>)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=<service name>)(SERVER=dedicated)))");
 
