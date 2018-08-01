@@ -48,11 +48,11 @@ namespace ODP_Core_Config_API
             OracleConfiguration.FetchSize = 1024 * 1024;
 
             // Set tracing options
-            OracleConfiguration.TraceLevel = 7;
             OracleConfiguration.TraceOption = 1;
-            // Uncomment below to write traces to specified directory
-            //OracleConfiguration.TraceFileLocation = @"D:\traces";
-
+            OracleConfiguration.TraceFileLocation = @"D:\traces";
+            // Uncomment below to generate trace files
+            //OracleConfiguration.TraceLevel = 7;
+            
             // Set network properties
             OracleConfiguration.SendBufferSize = 8192;
             OracleConfiguration.ReceiveBuffereSize = 8192;
