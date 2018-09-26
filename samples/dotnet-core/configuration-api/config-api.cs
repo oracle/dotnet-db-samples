@@ -55,7 +55,7 @@ namespace ODP_Core_Config_API
             
             // Set network properties
             OracleConfiguration.SendBufferSize = 8192;
-            OracleConfiguration.ReceiveBuffereSize = 8192;
+            OracleConfiguration.ReceiveBufferSize = 8192;
             OracleConfiguration.DisableOOB = true;
 
             OracleConnection orclCon = null;
