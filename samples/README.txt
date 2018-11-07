@@ -79,6 +79,10 @@ Sample 6: Demonstrates LOB updates using row-level locking.
 Sample 7: Demonstrates LOB updates using result set locking.
 BFile Sample: Demonstrates accessing BFILEs through ODP.NET.
 
+Performance Counters
+====================
+Sample 1: Demonstrates how to programmatically use ODP.NET performance counters.
+
 Ref Cursor
 ==========
 Sample 1: Demonstrates how a REF Cursor is obtained as an OracleDataReader.
