@@ -6,3 +6,5 @@ https://github.com/oracle/dotnet-db-samples/tree/master/samples/dotnet-core/Data
 https://github.com/oracle/dotnet-db-samples/blob/master/samples/dotnet-core/configuration-api/configuration-class.cs
 * ODP.NET Entity Framework Core sample:
 https://github.com/oracle/dotnet-db-samples/tree/master/samples/dotnet-core/ef-core
+* ODP.NET Core with ASP.NET Core with Docker:
+https://github.com/oracle/dotnet-db-samples/tree/master/session-demos/2018/Oracle-Code/SF/aspcore-docker-linux
