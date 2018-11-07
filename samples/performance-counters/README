@@ -3,6 +3,13 @@ ODP.NET Performance Counters Demo README
 To run the performance counters demo, modify the connection string and connect descriptor to connect to an Oracle Database with a 
 sample HR schema. Also modify the executable name to match the name of your executable in the exception handler.
 
+In the app.config, set the performance counters to monitor. This sample monitors the number of pooled connections by setting the 
+PerformanceCounters setting value to 256.
+
+          <settings>
+            <setting name="PerformanceCounters" value="256"/>
+          </settings>
+
 For ODP.NET 18c or earlier versions, use the OraProvCfg.exe utility included with the Oracle Universal Installer, MSI, or xcopy 
 installs to register ODP.NET performance counters. Registration is required for the counters to be available in Windows Performance 
 Monitor. 
