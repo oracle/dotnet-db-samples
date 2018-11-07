@@ -1,0 +1,20 @@
+ODP.NET Performance Counters Demo README
+----------------------------------------
+To run the performance counters demo, modify the connection string and connect descriptor to connect to an Oracle Database with a 
+sample HR schema. Also modify the executable name to match the name of your executable in the exception handler.
+
+For ODP.NET 18c or earlier versions, use the OraProvCfg.exe utility included with the Oracle Universal Installer, MSI, or xcopy 
+installs to register ODP.NET performance counters. Registration is required for the counters to be available in Windows Performance 
+Monitor. 
+
+Run the following command when using managed ODP.NET: 
+    OraProvCfg /action:register /product:odpm /component:perfcounter /providerpath:"<directory path>\oracle.manageddataaccess.dll“
+Or run the following command with Windows administrator privileges when using unmanaged ODP.NET:
+    OraProvCfg /action:register /product:odp /component:perfcounter /providerpath:"<directory path>\oracle.dataaccess.dll“
+OraProvCfg.exe is not available in ODP.NET 18c and earlier NuGet releases.
+
+In Oracle 19c and higher, all installs, including NuGet, will have a script for registering ODP.NET counters.
+
+In the .NET configuration file, set the PerformanceCounters parameter to indicate which counters to monitor. Refer to the ODP.NET 
+documentation of the specific version for these counter values. Optionally, you may set the poolName parameter for each pool you wish 
+to track. Setting a pool name makes it easier to identify the pool you are monitoring.
