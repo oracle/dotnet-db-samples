@@ -14,7 +14,7 @@ Modify the Data Source entry so that the application can connect to the database
 Save the project, including the C# source file (.cs) and project file (.csproj).
 
 Open the Package Manager Console (PMC) in Visual Studio and enter the following commands:
-* cd <project diretory>
+* cd \<project directory>
 * add-migration InitialCreate
 * update-database
 
