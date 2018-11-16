@@ -31,6 +31,6 @@ You will now see a new Rating column in the Blog table.
 
 To generate .NET code for a DbContext and entity types from a database, run the following command in the PMC:
 
-* Scaffold-DbContext "User Id=blog;Password=blog;Data Source=<data source>;" Oracle.EntityFrameworkCore -OutputDir Models
+* Scaffold-DbContext "User Id=blog;Password=blog;Data Source=\<data source>;" Oracle.EntityFrameworkCore -OutputDir Models
 
 A "Models" directory will be created in your Visual Studio project with EF Core generated code based on the Oracle schema.
