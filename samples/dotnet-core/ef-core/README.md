@@ -5,8 +5,8 @@ To use the sample code, create a new Oracle user. Log into the Oracle Database w
 * ALTER USER blog TEMPORARY TABLESPACE TEMP;
 
 In Visual Studio, create a .NET Core console project. In NuGet, install the following packages to the project:
-Oracle.EntityFrameworkCore
-Microsoft.EntityFrameworkCore.Tools
+* Oracle.EntityFrameworkCore
+* Microsoft.EntityFrameworkCore.Tools
 
 Copy and paste the Oracle Entity Framework C# source code sample.
 Modify the Data Source entry so that the application can connect to the database with the new user.
