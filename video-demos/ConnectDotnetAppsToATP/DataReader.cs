@@ -32,10 +32,6 @@ namespace ODPDataReader
             //Create a connection to Oracle			
             string conString = "User Id=hr;Password=<password>;" +
 
-            //How to connect to an Oracle DB without SQL*Net configuration file
-            //  also known as tnsnames.ora.
-            "Data Source=<ip or hostname>:1521/<service name>;";
-
             //How to connect to an Oracle DB with a DB alias.
             //Uncomment below and comment above.
             //"Data Source=<service name alias>;";
