@@ -41,24 +41,24 @@ namespace ODPCoreDataReader
             //"Data Source=<service name alias>;";
      
             using (OracleConnection con = new OracleConnection(conString))
+            using (OracleCommand cmd = con.CreateCommand())
             {
-                using (OracleCommand cmd = con.CreateCommand())
+                try
                 {
-                    try
+                    con.Open();
+                    cmd.BindByName = true;                        
+
+                    //Use the command to display employee names from 
+                    // the EMPLOYEES table
+                    cmd.CommandText = "select first_name from employees where department_id = :id";
+
+                    // Assign id to the department number 50 
+                    OracleParameter id = new OracleParameter("id", 50);
+                    cmd.Parameters.Add(id);
+
+                    //Execute the command and use DataReader to display the data
+                    using (OracleDataReader reader = cmd.ExecuteReader())
                     {
-                        con.Open();
-                        cmd.BindByName = true;                        
-
-                        //Use the command to display employee names from 
-                        // the EMPLOYEES table
-                        cmd.CommandText = "select first_name from employees where department_id = :id";
-
-                        // Assign id to the department number 50 
-                        OracleParameter id = new OracleParameter("id", 50);
-                        cmd.Parameters.Add(id);
-
-                        //Execute the command and use DataReader to display the data
-                        OracleDataReader reader = cmd.ExecuteReader();
                         while (reader.Read())
                         {
                             Console.WriteLine("Employee First Name: " + reader.GetString(0));
@@ -67,14 +67,13 @@ namespace ODPCoreDataReader
                         Console.WriteLine();
                         Console.WriteLine("Press 'Enter' to continue");
 
-                        reader.Dispose();
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    Console.ReadLine();
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                Console.ReadLine();
             }
         }
     }
