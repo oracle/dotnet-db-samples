@@ -1,3 +1,5 @@
+Oracle Entity Framework Core beta is currently available as a private beta. If you would like to join the private beta, email dotnet_us (at) oracle.com.
+
 To use the sample code, create a new Oracle user. Log into the Oracle Database with DBA privileges and run the following commands:
 
 * GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO blog IDENTIFIED BY blog;
@@ -8,7 +10,7 @@ In Visual Studio, create a .NET Core console project. In NuGet, install the foll
 * Oracle.EntityFrameworkCore
 * Microsoft.EntityFrameworkCore.Tools
 
-Copy and paste the Oracle Entity Framework C# source code sample.
+Copy and paste the Oracle Entity Framework Core C# source code sample.
 Modify the Data Source entry so that the application can connect to the database with the new user.
 
 Save the project, including the C# source file (.cs) and project file (.csproj).
