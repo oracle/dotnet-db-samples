@@ -18,6 +18,10 @@ PL/SQL Associative Array
 ========================
 Sample 1: Demonstrates PL/SQL Associative Array binding.
 
+Application Continuity
+======================
+Sample 1: Unmanaged ODP.NET Application Continuity code sample with setup and runtime demo instructions.
+
 Autonomous Database
 ===================
 Sample 1: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database.
