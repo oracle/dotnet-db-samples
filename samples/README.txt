@@ -10,6 +10,10 @@ While these samples are designed for managed ODP.NET, they can use unmanaged ODP
 
 Below is a list of topics that the samples cover:
 
+Application Continuity
+======================
+Sample 1: Unmanaged ODP.NET Application Continuity code sample with setup and runtime demo instructions.
+
 Parameter Array Binding
 =======================
 Sample 1: Demonstrates parameter array binding.
@@ -17,10 +21,6 @@ Sample 1: Demonstrates parameter array binding.
 PL/SQL Associative Array
 ========================
 Sample 1: Demonstrates PL/SQL Associative Array binding.
-
-Application Continuity
-======================
-Sample 1: Unmanaged ODP.NET Application Continuity code sample with setup and runtime demo instructions.
 
 Autonomous Database
 ===================
