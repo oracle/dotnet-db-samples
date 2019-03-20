@@ -48,9 +48,10 @@ namespace AppContinuity
             //      if not already available.
             //  2) Run "GRANT execute on DBMS_APP_CONT to HR;" so that ODP.NET can determine the 
             //      in-flight transaction status following a recoverable error.
-            // B) Modify the following connection attributes in this sample code:
+            // B) In client app, modify the following connection attributes in this sample code:
             //  1) Password: Password you specified while setting up HR schema setup.
             //  2) Data Source: Connection descriptor or TNS alias to connect to the database.
+            // Be sure to use unmanaged ODP.NET 12.2 or higher, which supports AC.
 
             //Runtime instructions:
             // You can intermittently execute the following command on the database
