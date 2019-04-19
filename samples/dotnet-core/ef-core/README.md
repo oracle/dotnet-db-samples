@@ -1,4 +1,4 @@
-Oracle Entity Framework Core beta is currently available as a private beta. If you would like to join the private beta, email dotnet_us (at) oracle.com.
+Oracle Entity Framework Core is currently available as a public beta on [nuget.org](https://www.nuget.org/packages/Oracle.EntityFrameworkCore/).
 
 To use the sample code, create a new Oracle user. Log into the Oracle Database with DBA privileges and run the following commands:
 
