@@ -33,6 +33,7 @@ namespace OracleEFCore
         // This sample code shows how to bind a parameter, return a result set, and call a stored
         //procedure using Oracle EF Core. Calling a stored procedure requires using the FromSQL
         //extension method and using anonymous PL/SQL.
+        // Use the .sql file to create the stored procedure in the schema.
     
         public class BloggingContext : DbContext
         {
