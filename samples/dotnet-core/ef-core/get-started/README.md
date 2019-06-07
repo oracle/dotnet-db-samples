@@ -1,4 +1,4 @@
-Oracle Entity Framework Core is currently available as a public beta on [nuget.org](https://www.nuget.org/packages/Oracle.EntityFrameworkCore/).
+Oracle Entity Framework Core is currently available on [nuget.org](https://www.nuget.org/packages/Oracle.EntityFrameworkCore/).
 
 To use the sample code, create a new Oracle user. Log into the Oracle Database with DBA privileges and run the following commands:
 
