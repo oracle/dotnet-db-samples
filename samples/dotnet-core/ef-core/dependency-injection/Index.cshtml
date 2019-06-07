@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DependencyInjection.Models.Blog>
+
+    @{
+    ViewBag.Title = "Blogs";
+    }
+
+    @foreach (var item in Model)
+    {
+        <div>
+        Blog Id:
+        @item.BlogId
+        , URL:
+        @item.Url
+        <br />
+        </div>
+    }
