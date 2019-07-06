@@ -73,17 +73,27 @@ namespace OracleEFCore
                 db.SaveChanges();
             }
 
+            // Demonstrate returning implicit REF Cursor from PL/SQL
             using (var db = new BloggingContext())
             {
-                
+                // Use anonymous PL/SQL to call stored procedure and return result set
+                var blogs = db.Blogs
+                    .FromSql("BEGIN GETALLBLOGS_IMPLICIT(); END;")
+                    .ToList()
+                    .OrderBy(Blog => Blog.BlogId);
+            }
+
+            // Demonstrate returning explicitly bound REF Cursor from PL/SQL
+            using (var db = new BloggingContext())
+            {
                 // Create REF Cursor output parameter
                 var allblogs = new OracleParameter("blogparam", OracleDbType.RefCursor, ParameterDirection.Output);
 
-                // Use anonymous PL/SQL to call stored procedure, which returns result set output parameter
+                // Use anonymous PL/SQL to call stored procedure, bind output parameter, and return result set
                 var blogs = db.Blogs
-                    .FromSql("BEGIN GETALLBLOGS(:blogparam); END;", new object[] {allblogs})
+                    .FromSql("BEGIN GETALLBLOGS(:blogparam); END;", new object[] { allblogs })
                     .ToList()
-                    .OrderBy(Blog => Blog.BlogId);         
+                    .OrderBy(Blog => Blog.BlogId);
             }
         }
     }
