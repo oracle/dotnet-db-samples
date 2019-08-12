@@ -16,8 +16,7 @@ Modify the Data Source entry so that the application can connect to the database
 Save the project, including the C# source file (.cs) and project file (.csproj).
 
 Open the Package Manager Console (PMC) in Visual Studio and enter the following commands:
-* cd \<project directory>
-* add-migration InitialCreate
+* add-migration first
 * update-database
 
 These commands will scaffold the migration, create an initial model for the two tables, then apply the migrations to the database.
@@ -26,7 +25,7 @@ When you navigate to the database and view the Blog schema, you will now see the
 You can then run the application, which will add a new blog row to the Blogs table.
 
 Finally, you can uncomment the Rating property in the Blog class, then run in the PMC:
-* add-migration Second
+* add-migration second
 * update-database
 
 You will now see a new Rating column in the Blog table.
