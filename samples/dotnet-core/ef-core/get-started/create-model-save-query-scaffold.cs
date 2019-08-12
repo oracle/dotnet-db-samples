@@ -52,9 +52,9 @@ namespace OracleEFCore
             public int BlogId { get; set; }
             public Blog Blog { get; set; }
         }
+     
         static void Main(string[] args)
         {
-
             using (var db = new BloggingContext())
             {
                 var blog = new Blog { Url = "https://blogs.oracle.com" };
@@ -66,8 +66,6 @@ namespace OracleEFCore
             {
                 var blogs = db.Blogs;
             }
-
         }
-
     }
 }
