@@ -17,7 +17,6 @@
  *****************************************************************************/
  
 using System.Collections.Generic;
-using Oracle.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace OracleEFCore
