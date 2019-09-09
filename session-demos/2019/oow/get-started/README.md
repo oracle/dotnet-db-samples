@@ -2,5 +2,6 @@ This ODP.NET Core sample shows how to connect to an Oracle Database, use anonymo
 
 Run this application from console project using .NET Core 2.1 or higher. The application logs into the HR schema. Prior to running this app:
 
-1) Enter the HR password.
-2) Enter the database net service name, Easy Connect (Plus), or equivalent connection information.
+1) Add ODP.NET Core from the NuGet Gallery.
+2) Enter the HR password.
+3) Enter the database net service name, Easy Connect (Plus), or equivalent connection information
