@@ -30,7 +30,7 @@ namespace UsingOracleCredential
             // This sample app shows how to connect with OracleCredential using the HR schema
 
             // Connection string without password
-            string conString = "Data Source=<data souce>;";
+            string conString = "Data Source=<data source>;";
 
             // Provide the password and make read-only
             // This sample assumes the password is 'hr'
