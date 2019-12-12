@@ -45,7 +45,7 @@ namespace ODP.NET_Core_Autonomous
                         OracleConfiguration.OracleDataSources.Add("autonomous", "(description=(address=(protocol=tcps)(port=<PORT>)(host=<HOSTNAME/IP>))(connect_data=(service_name=<SERVICE NAME>))(security=(ssl_server_cert_dn=<DISTINGUISHED NAME>)))");
 
                         //Enter directory where wallet is stored locally
-                        OracleConfiguration.WalletLocation = @"(SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY=<LOCAL DIRECTORY>)))";
+                        OracleConfiguration.WalletLocation = @"<DIRECTORY>";
 
                         con.Open();
 
