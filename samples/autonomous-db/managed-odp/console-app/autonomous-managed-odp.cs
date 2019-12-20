@@ -32,7 +32,7 @@ namespace Managed_ODP.NET_Autonomous
             string conString = "User Id=<USER ID>;Password=<PASSWORD>;" +
 
             //Enter net service name for data source value
-            "Data Source=autonomous;";
+            "Data Source=<NET SERVICE NAME>;";
 
             using (OracleConnection con = new OracleConnection(conString))
             {
