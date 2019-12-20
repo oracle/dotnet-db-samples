@@ -40,9 +40,7 @@ namespace Managed_ODP.NET_Autonomous
                 {
                     try
                     {
-                        //Connect descriptor, net service name entry, and wallet directory settings are 
-                        // located in app.config. Enter the database machine port, hostname/IP, service 
-                        // name, distinguished name, and local wallet directory there.
+                        //TNS_ADMIN and wallet directory entries can be entered in the app.config file.
 
                         con.Open();
 
