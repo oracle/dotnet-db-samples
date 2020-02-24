@@ -32,7 +32,7 @@ namespace VSADBDemo
             //Create a connection to Oracle			
             string conString = "User Id=hr;Password=mypassword;" +
 
-            "Data Source=myalias>;";
+            "Data Source=myalias;";
 
             using (OracleConnection con = new OracleConnection(conString))
             {
