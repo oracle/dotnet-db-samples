@@ -1,8 +1,8 @@
-This sample code demonstrates how to use dependency injection and ASP.NET Core with Oracle Entity Framework.
+This sample code demonstrates how to use dependency injection and ASP.NET Core with Oracle Entity Framework Core 2.x. It does not support later EF Core versions.
 
 Before you run the application:
-1. Add the Oracle.EntityFrameworkCore assembly from NuGet
-2. Populate the Oracle User Id, Password, and Data Source information in the appsettings.json file
+1. Add the Oracle.EntityFrameworkCore assembly from NuGet Gallery.
+2. Populate the Oracle User Id, Password, and Data Source information in the appsettings.json file.
 3. Use EF Core migrations to create the Blogs table and populate it with some data. 
 
 When you then run this sample app, the web page will then return results.
