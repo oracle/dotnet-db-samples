@@ -1,4 +1,4 @@
-/* Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved. */
+/* Copyright (c) 2019, 2020 Oracle and/or its affiliates. All rights reserved. */
 
 /******************************************************************************
  *
@@ -77,8 +77,10 @@ namespace OracleEFCore
             using (var db = new BloggingContext())
             {
                 // Use anonymous PL/SQL to call stored procedure and return result set
+                // Comment and uncomment the FromSql* extension method depending on the .NET Core version used
                 var blogs = db.Blogs
-                    .FromSql("BEGIN GETALLBLOGS_IMPLICIT(); END;")
+                    .FromSqlRaw("BEGIN GETALLBLOGS_IMPLICIT(); END;")   // .NET Core 3.x syntax
+                    //.FromSql("BEGIN GETALLBLOGS_IMPLICIT(); END;")    // .NET Core 2.x syntax
                     .ToList()
                     .OrderBy(Blog => Blog.BlogId);
             }
@@ -90,8 +92,10 @@ namespace OracleEFCore
                 var allblogs = new OracleParameter("blogparam", OracleDbType.RefCursor, ParameterDirection.Output);
 
                 // Use anonymous PL/SQL to call stored procedure, bind output parameter, and return result set
+                // Comment and uncomment the FromSql* extension method depending on the .NET Core version used
                 var blogs = db.Blogs
-                    .FromSql("BEGIN GETALLBLOGS(:blogparam); END;", new object[] { allblogs })
+                    .FromSqlRaw("BEGIN GETALLBLOGS(:blogparam); END;", new object[] { allblogs })   // .NET Core 3.x syntax
+                    //.FromSql("BEGIN GETALLBLOGS(:blogparam); END;", new object[] { allblogs })    // .NET Core 2.x syntax
                     .ToList()
                     .OrderBy(Blog => Blog.BlogId);
             }
