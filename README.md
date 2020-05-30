@@ -20,7 +20,7 @@ For beginning Oracle .NET developers, these <a href="http://www.oracle.com/techn
 
 <H2>More Information</H2>
 <ul>
-<li><a href="http://docs.oracle.com/cd/E63277_01/index.htm">Documentation</a></li>
+<li><a href="https://docs.oracle.com/en/database/oracle/oracle-data-access-components/19.3/">Documentation</a></li>
 <li>Code samples are included with the ODAC Oracle Universal Installation. You will find them in the "ODACSamples" directory in the Oracle Client installation home (e.g. d:\app\client\&lt;username&gt;\product\&lt;Oracle version&gt;\client_1\ODACsamples).</li>
 <li>Contibutions to code samples should review <a href="CONTRIBUTING.md">CONTRIBUTING</a> for more details.</li>
 <li>You may use files in this repository only if in compliance with the <a href="LICENSE">LICENSE</a>.</li>
