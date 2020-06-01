@@ -25,7 +25,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace OracleEFCore_ADB
 {
-     // This sample code demonstrates using ODP.NET EF Core with an Oracle Autonomous Database
+    // This sample code demonstrates using ODP.NET EF Core with an Oracle Autonomous Database
     class Program
     {
         public class BloggingContext : DbContext
@@ -35,14 +35,9 @@ namespace OracleEFCore_ADB
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                // Set TnsAdmin value to directory location of tnsnames.ora and sqlnet.ora files
-                OracleConfiguration.TnsAdmin = @"<DIRECTORY LOCATION>";
-
-                // Set WalletLocation value to directory location of the ADB wallet (i.e. cwallet.sso)
-                OracleConfiguration.WalletLocation = @"<DIRECTORY LOCATION>";
 
                 // Configure ODP.NET connection string
-                optionsBuilder.UseOracle(@"User Id=<USER>;Password=<PASSWORD>;Data Source=<TNS NAME>") ;
+                optionsBuilder.UseOracle(@"User Id=<USER>;Password=<PASSWORD>;Data Source=<TNS NAME>");
             }
         }
 
@@ -65,6 +60,11 @@ namespace OracleEFCore_ADB
 
         static void Main(string[] args)
         {
+            // Set TnsAdmin value to directory location of tnsnames.ora and sqlnet.ora files
+            OracleConfiguration.TnsAdmin = @"<DIRECTORY LOCATION>";
+
+            // Set WalletLocation value to directory location of the ADB wallet (i.e. cwallet.sso)
+            OracleConfiguration.WalletLocation = @"<DIRECTORY LOCATION>";
 
             using (var db = new BloggingContext())
             {
