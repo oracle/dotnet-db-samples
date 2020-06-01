@@ -1,4 +1,4 @@
-This sample code demonstrates using ODP.NET Entity Framework Core with an Oracle Autonomous Database (ADB). It builds off [this introductory sample](https://github.com/oracle/dotnet-db-samples/blob/master/samples/dotnet-core/ef-core/get-started/) for Oracle EF Core beginners. In this sample, ADB connection setup occurs in the OnConfiguring method. 
+This sample code demonstrates using ODP.NET Entity Framework Core with an Oracle Autonomous Database (ADB). It is compatible with EF Core 2.x and 3.x. It builds off [this introductory sample](https://github.com/oracle/dotnet-db-samples/blob/master/samples/dotnet-core/ef-core/get-started/) for Oracle EF Core beginners. In this sample, ADB connection setup occurs in the OnConfiguring method. 
 
 1. Set the OracleConfiguration.TnsAdmin property value to the tnsnames.ora and sqlnet.ora files directory location. 
 
