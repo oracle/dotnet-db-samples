@@ -31,7 +31,8 @@ namespace ODPSample
     static void Main(string[] args)
     {
       // Connect
-      string connectStr = "User Id=scott;Password=tiger;Data Source=oracle";
+      // This sample code's DEPT table shares the same characteristics as SCOTT schema's DEPT table
+      string connectStr = "User Id=<USER ID>;Password=<PASSWORD>;Data Source=<TNS ALIAS>";
 
       // Setup the Tables for sample
       Setup(connectStr);
