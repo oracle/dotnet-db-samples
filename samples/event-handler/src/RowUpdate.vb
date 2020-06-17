@@ -197,7 +197,7 @@ Public Class RowUpdate
         Me.Password.Name = "Password"
         Me.Password.Size = New System.Drawing.Size(80, 20)
         Me.Password.TabIndex = 1
-        Me.Password.Text = "tiger"
+        Me.Password.Text = "<PASSWORD>"
         '
         'Connection
         '
