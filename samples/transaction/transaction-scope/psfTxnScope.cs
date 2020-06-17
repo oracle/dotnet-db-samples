@@ -30,7 +30,7 @@ class psfTxnScope
     int retVal = 0;
     string providerName = "Oracle.ManagedDataAccess.Client";
     string constr =
-           @"User Id=scott;Password=tiger;Data Source=oracle;";
+           @"User Id=scott;Password=<PASSWORD>;Data Source=oracle;";
 
     // Get the provider factory.
     DbProviderFactory factory = DbProviderFactories.GetFactory(providerName);
