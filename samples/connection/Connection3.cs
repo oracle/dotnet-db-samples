@@ -26,7 +26,7 @@ class GetSchemaSample
 {
   static void Main(string[] args)
   {
-    string constr = "User Id=scott; Password=tiger; Data Source=oracle;";
+    string constr = "User Id=scott; Password=<PASSWORD>; Data Source=oracle;";
     string ProviderName = "Oracle.ManagedDataAccess.Client";
 
     DbProviderFactory factory = DbProviderFactories.GetFactory(ProviderName);
