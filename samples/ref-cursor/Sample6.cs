@@ -37,7 +37,7 @@ namespace Sample6
     static void Main(string[] args)
     {
       // Connect
-      string constr = "User Id=scott;Password=tiger;Data Source=oracle";
+      string constr = "User Id=scott;Password=<PASSWORD>;Data Source=oracle";
       OracleConnection con = Connect(constr);
       
       // Setup
