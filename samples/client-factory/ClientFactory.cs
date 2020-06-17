@@ -26,7 +26,7 @@ class FactorySample
 {
   static void Main()
   {
-    string constr = "user id=scott;password=tiger;data source=oracle";
+    string constr = "user id=scott;password=<PASSWORD>;data source=oracle";
 
     DbProviderFactory factory =
             DbProviderFactories.GetFactory("Oracle.ManagedDataAccess.Client");
