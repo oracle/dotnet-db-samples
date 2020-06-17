@@ -38,7 +38,7 @@ namespace ODPSample
     {
 
       // Connection String with Statement Caching not enabled
-      string constr = "User Id=scott;Password=tiger;Data Source=oracle;Statement Cache Size=0;Self Tuning=false";
+      string constr = "User Id=scott;Password=<PASSWORD>;Data Source=oracle;Statement Cache Size=0;Self Tuning=false";
 
       Console.WriteLine("Executing 5 Statements 1000 times each, please wait... ");
       
@@ -53,7 +53,7 @@ namespace ODPSample
       // Hence cache size should be chosen depending on the number of statements
       // that the application repeatedly executes
       // Cache size should not exceed the size of OPEN_CURSORS as defined in init.ora
-      constr = "User Id=scott;Password=tiger;Data Source=oracle;Statement Cache Size=5;Self Tuning=false";
+      constr = "User Id=scott;Password=<PASSWORD>;Data Source=oracle;Statement Cache Size=5;Self Tuning=false";
       
       // Execute some statements with caching enabled and retrieve the time taken
       double totalSecCachingOn = StatementCache.MeasurePerformance(constr);
