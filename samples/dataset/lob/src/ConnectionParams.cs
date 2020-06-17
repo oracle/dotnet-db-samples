@@ -41,7 +41,7 @@ namespace ManipulateAds
 		//Replace with Connect String as TNSNames
 		public static string Datasource="oracle"; 
 		public static string Username="scott";      //Username
-		public static string Password="tiger";      //Password
+		public static string Password="<PASSWORD>"; //Password
 	}
 }
 		
