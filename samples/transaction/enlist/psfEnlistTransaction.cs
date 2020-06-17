@@ -30,7 +30,7 @@ class psfEnlistTransaction
     int retVal = 0;
     string providerName = "Oracle.ManagedDataAccess.Client";
     string constr =
-           @"User Id=scott;Password=tiger;Data Source=oracle;enlist=dynamic";
+           @"User Id=scott;Password=<PASSWORD>;Data Source=oracle;enlist=dynamic";
 
     // Get the provider factory.
     DbProviderFactory factory = DbProviderFactories.GetFactory(providerName);
