@@ -44,7 +44,7 @@ Module ConnectionParams
         'Username
         username = "scott"
         'Password
-        password = "tiger"
+        password = "<PASSWORD>"
     End Sub
 
 End Module
