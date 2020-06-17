@@ -27,7 +27,7 @@ class ConnectionStringBuilderSample
 {
   static void Main(string[] args)
   {
-    string connString = "user id=scott;password=tiger;Data source=oracle;";
+    string connString = "user id=scott;password=<PASSWORD>;Data source=oracle;";
     bool bRet = false;
     
     // Create an instance of OracleConnectionStringBuilder
