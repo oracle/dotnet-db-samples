@@ -27,7 +27,7 @@ namespace ManipulateProducts
 		//Change the values to those applicable to your database
 		public static string Datasource="oracle"; //Connect String as TNSNames
 		public static string Username="scott";      //Username
-		public static string Password="tiger";      //Password
+		public static string Password="<PASSWORD>"; //Password
 	}
 }
 		
