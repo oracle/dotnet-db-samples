@@ -26,7 +26,7 @@ class VisibleFieldCountSample
 {
   static void Main(string[] args)
   {
-    string constr = "User Id=scott; Password=tiger; Data Source=oracle;";
+    string constr = "User Id=scott; Password=<PASSWORD>; Data Source=oracle;";
     DbProviderFactory factory =
             DbProviderFactories.GetFactory("Oracle.ManagedDataAccess.Client");
 
