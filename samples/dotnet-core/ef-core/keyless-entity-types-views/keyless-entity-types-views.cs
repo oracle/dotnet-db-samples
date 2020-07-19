@@ -34,11 +34,21 @@ namespace Oracle_KET_Views
                 #region Query
                 var postCounts = db.BlogPostCounts.ToList();
 
+                Console.WriteLine("View Results:");
                 foreach (var postCount in postCounts)
                 {
                     Console.WriteLine($"{postCount.BlogName} has {postCount.PostCount} posts.");
-                    Console.WriteLine();
                 }
+
+                Console.WriteLine();
+                Console.WriteLine("Materialized View Results:");
+                var mvPostCounts = db.MVBlogPostCounts.ToList();
+
+                foreach (var mvPostCount in mvPostCounts)
+                {
+                    Console.WriteLine($"{mvPostCount.BlogName} has {mvPostCount.PostCount} posts.");
+                }
+
                 #endregion
             }
         }
@@ -95,8 +105,17 @@ namespace Oracle_KET_Views
                         "SELECT b.\"Name\", Count(p.\"PostId\") as \"PostCount\" " +
                         "FROM \"Blogs\" b " +
                         "JOIN \"Posts\" p on p.\"BlogId\" = b.\"BlogId\" " +
-                        "GROUP BY b.\"Name\" " +
-                        "WITH READ ONLY;");
+                        "GROUP BY b.\"Name\";");
+                    #endregion
+
+                    #region MaterializedView
+                    db.Database.ExecuteSqlRaw(
+                        "CREATE MATERIALIZED VIEW \"MView_BlogPostCounts\" " +
+                        "BUILD IMMEDIATE REFRESH FORCE ON DEMAND AS " +
+                        "SELECT b.\"Name\", Count(p.\"PostId\") as \"PostCount\" " +
+                        "FROM \"Blogs\" b " +
+                        "JOIN \"Posts\" p on p.\"BlogId\" = b.\"BlogId\" " +
+                        "GROUP BY b.\"Name\";");
                     #endregion
                 }
             }
@@ -110,6 +129,7 @@ namespace Oracle_KET_Views
 
         #region DbSet
         public DbSet<BlogPostsCount> BlogPostCounts { get; set; }
+        public DbSet<BlogPostsCount> MVBlogPostCounts { get; set; }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -128,6 +148,12 @@ namespace Oracle_KET_Views
                 {
                     eb.HasNoKey();
                     eb.ToView("View_BlogPostCounts");
+                    eb.Property(v => v.BlogName).HasColumnName("Name");
+                })
+                .Entity<MVBlogPostsCount>(eb =>
+                {
+                    eb.HasNoKey();
+                    eb.ToView("MView_BlogPostCounts");
                     eb.Property(v => v.BlogName).HasColumnName("Name");
                 });
         }
@@ -154,6 +180,11 @@ namespace Oracle_KET_Views
 
     #region KeylessEntityType
     public class BlogPostsCount
+    {
+        public string BlogName { get; set; }
+        public int PostCount { get; set; }
+    }
+    public class MVBlogPostsCount
     {
         public string BlogName { get; set; }
         public int PostCount { get; set; }
