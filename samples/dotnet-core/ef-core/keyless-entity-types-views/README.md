@@ -10,3 +10,5 @@ Ensure the EF Core user has the database privileges to create the necessary sche
 
 To scaffold views, add the Microsoft.EntityFrameworkCore.Tools package from NuGet Gallery. Then, run this command from the Package Manager Console:
 * Scaffold-DbContext "User Id=&lt;Oracle User&gt;;Password=&lt;Password&gt;;Data Source=&lt;Data Source&gt;;" Oracle.EntityFrameworkCore -OutputDir Models
+
+Note: There are no EF Core migration APIs specifically for database view DDL. To perform view DDL, execute SQL, such as using the ExecuteSqlRaw method as the sample code does.
