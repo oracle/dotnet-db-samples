@@ -27,7 +27,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Oracle.ManagedDataAccess.Client;
 
-namespace ODPCoreASPCore
+namespace ODPCoreASPCore2
 {
     public class Startup
     {
