@@ -26,7 +26,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace ODPCoreASPCore
+namespace ODPCoreASPCore2
 {
     public class Program
     {
