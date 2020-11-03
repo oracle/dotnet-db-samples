@@ -7,4 +7,4 @@ Create a new .NET Core console project, add ODP.NET Core assembly ([Oracle.Manag
 This repository has ADB code samples for ODP.NET Core, managed ODP.NET, and unmanaged ODP.NET. This directory contains the 
 ODP.NET Core sample. The other ODP.NET Autonomous DB samples are located [here](https://github.com/oracle/dotnet-db-samples/tree/master/samples/autonomous-db).
 
-The "asp.net-core" subdirectory contains an ADB sample using ASP.NET Core and ODP.NET Core.
+The "web" subdirectory contains an ADB sample using ASP.NET Core and ODP.NET Core.
