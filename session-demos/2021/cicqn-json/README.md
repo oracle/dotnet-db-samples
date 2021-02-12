@@ -3,14 +3,14 @@ This C# sample console app uses ODP.NET Core 21c to demonstrate two new Oracle D
 * Client Initiated Continuous Query Notification (CICQN) 
 * Native JSON binary data type (OSON)
 
-Learn more about ODP.NET CICQN and JSON data type in this blog post.
+Learn more about [ODP.NET CICQN and JSON data type in this blog post](https://medium.com/@alex.keh/introducing-odp-net-21c-ef-core-5-json-and-more-ea0843e89dea).
 
 These features require Oracle Database 21c and ODP.NET 21c or higher. You can download 
 [ODP.NET 21c from NuGet Gallery](https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core/3.21.1). 
 Oracle Database 21c can be deployed in minutes using a [free Oracle Autonomous Database](https://www.oracle.com/cloud/free/).
 
 Setup instructions: 
-1. The database administrator executes "GRANT CHANGE NOTIFICATION TO <USER>" so that the app can use CICQN.
+1. The database administrator executes "GRANT CHANGE NOTIFICATION TO &#60;USER&#62;" so that the app can use CICQN.
 2. Run the setup.sql file scripts to create the J_PURCHASEORDER table and insert a JSON document into the user's schema.
 3. Populate the Constants class in the C# app with your app-specific values.
 
