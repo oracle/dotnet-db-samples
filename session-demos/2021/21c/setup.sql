@@ -8,7 +8,7 @@ INSERT INTO j_purchaseorder
           to_date('30-DEC-2014'),
           '{"PONumber"             : 1600,
             "Reference"            : "ABULL-20140421",
-	          "Requestor"            : "Alexis Bull",
+	    "Requestor"            : "Alexis Bull",
             "User"                 : "ABULL",
             "CostCenter"           : "A50",
             "ShippingInstructions" : "Mail package",
