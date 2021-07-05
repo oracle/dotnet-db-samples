@@ -42,7 +42,7 @@ namespace <ADD NAMESPACE>
 
                     //Set the directory where the sqlnet.ora, tnsnames.ora, and 
                     //  wallet files are located
-                    OracleConfiguration.TnsAdmin = @"<ADD TNSADMIN and WALLET DIRECTORY";
+                    OracleConfiguration.TnsAdmin = @"<ADD TNSADMIN and WALLET DIRECTORY>";
                     OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
 
                     using (OracleConnection con = new OracleConnection(conString))
@@ -54,7 +54,7 @@ namespace <ADD NAMESPACE>
                                 con.Open();
                                 await context.Response.WriteAsync("Connected to Oracle Autonomous Database." + "\n" + "\n");
 
-                                //Retrieve first 20 customers' names, cities, and credit limits from Sales History (SH) schema.
+                                //Retrieve first 20 customer names, cities, and credit limits from Sales History (SH) schema.
                                 //SH schema is available as a read-only data set in shared ADB
                                 cmd.CommandText = "select CUST_FIRST_NAME, CUST_LAST_NAME, CUST_CITY, CUST_CREDIT_LIMIT " +
                                     "from SH.CUSTOMERS order by CUST_ID fetch first 20 rows only";
