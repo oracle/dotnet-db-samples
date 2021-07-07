@@ -1,7 +1,9 @@
 # Connecting Oracle Autonomous Database with Azure Web App
-This ODP.NET Core C# sample demonstrates how to connect an ASP.NET Core Azure app to Oracle Autonomous Database (ADB). Watch the video to learn how to configure Azure to use this 
-sample code. Both [ODP.NET Core](https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core/) and 
-[Oracle Autonomous Database](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adbfreeoverview.htm) are available for free to developers.
+This ODP.NET Core C# sample demonstrates how to connect an ASP.NET Core Azure app to Oracle Autonomous Database (ADB).
+
+Watch this [video to learn how to set up Azure and Oracle Autonomous Database](https://www.youtube.com/watch?v=DfGkBGuOv_c) with this sample code.
+
+Both [ODP.NET Core](https://www.nuget.org/packages/Oracle.ManagedDataAccess.Core/) and [Oracle Autonomous Database](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adbfreeoverview.htm) are available for free to developers.
 
 The sample queries the Sales History (SH) schema, which is available to all shared ADB instances from any connected user. If you are using dedicated ADB, replace the query 
 with your own customized one. The app was tested using ODP.NET Core 21c and ASP.NET Core 5, but is expected to work with both older and newer ODP.NET and .NET versions.
