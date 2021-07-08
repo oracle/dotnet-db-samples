@@ -10,10 +10,11 @@ with your own customized one. The app was tested using ODP.NET Core 21c and ASP.
 
 Sample use directions:
 1. Create a blank ASP.NET Core app. 
-2. Replace the contents of Startup.cs with the sample code.
-3. Provide the app's namespace, user password, net service name, TNS admin directory, and wallet directory. Modify the user id if you are not using the standard ADMIN account. 
-4. Run the web app from Visual Studio on-premises to connect to ADB. This step provides a checkpoint that the app and ADB are configured correctly.
-5. Modify the TNS admin (for tnsnames.ora and sqlnet.ora) and wallet (for cwallet.sso) directory values to the Azure directories these files will be uploaded to.
+2. Add ODP.NET Core from NuGet Gallery.
+3. Replace the contents of Startup.cs with the sample code.
+4. Provide the app's namespace, user password, net service name, TNS admin directory, and wallet directory. Modify the user id if you are not using the standard ADMIN account. 
+5. Run the web app from Visual Studio on-premises to connect to ADB. This step provides a checkpoint that the app and ADB are configured correctly.
+6. Modify the TNS admin (for tnsnames.ora and sqlnet.ora) and wallet (for cwallet.sso) directory values to the Azure directories these files will be uploaded to.
 7. Deploy the app to the Azure web app service. Select the Basic pricing level or higher. The Shared and Free levels cannot use file-based wallets, which this demo uses.
 8. The tnsnames.ora, sqlnet.ora, and wallet files will not be deployed by default. Modify the .NET project file (i.e. csproj) so that they will be deployed. For example, if a directory "DB" is where these Oracle files are stored, make the following change:
 ```
