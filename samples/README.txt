@@ -8,7 +8,7 @@ The HR schema create scripts are located here: https://github.com/oracle/db-samp
 3) Add Oracle.ManagedDataAccess.dll to the sample application.
 4) Read <GitHub .NET samples directory>\doc\Readme.html, if any. 
 
-While these samples are designed for managed ODP.NET, they can use unmanaged ODP.NET by incorporating Oracle.DataAccess.dll and adding the correct namespace references (i.e. using Oracle.DataAccess.Client; using Oracle.DataAccess.Types;).
+While these samples are designed for managed ODP.NET or ODP.NET Core, they generally can use unmanaged ODP.NET by incorporating Oracle.DataAccess.dll and adding the correct namespace references (i.e. using Oracle.DataAccess.Client; using Oracle.DataAccess.Types;).
 
 Below is a list of topics that the samples cover:
 
