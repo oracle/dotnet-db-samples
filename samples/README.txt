@@ -91,7 +91,7 @@ Sample 1: Demonstrates how to populate and obtain LOB data from a DataSet.
 Sample 2: Demonstrates how an OracleClob object is obtained as an output parameter of an anonymous PL/SQL block.
 Sample 3: Demonstrates how an OracleClob object is obtained from an output parameter of a stored procedure.
 Sample 4: Demonstrates how the LOB column data can be read as a .NET type by utilizing stream reads.
-Sample 5: Demonstrates how to bind an OracleClob object as a parameter.  This sample also refetches the newly updated CLOB data using an OracleDataReader and an OracleClob object.
+Sample 5: Demonstrates how to bind an OracleClob object as a parameter and refetch the newly updated CLOB data using an OracleDataReader and an OracleClob object.
 Sample 6: Demonstrates LOB updates using row-level locking.
 Sample 7: Demonstrates LOB updates using result set locking.
 BFile Sample: Demonstrates accessing BFILEs through ODP.NET.
