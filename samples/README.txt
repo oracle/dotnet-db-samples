@@ -1,8 +1,10 @@
-ODP.NET, Managed Driver Code Samples
-====================================
-You must have managed ODP.NET installed. To run the samples, follow these directions:
+Managed ODP.NET and ODP.NET Core Code Samples
+=============================================
+You must have managed ODP.NET or ODP.NET Core installed. To run the samples, follow these directions:
 1) Modify the Data Source attribute in the connection strings to connect to an Oracle database via Easy Connect, TNS connect descriptor, or TNS alias.
-2) Most of these samples use the SCOTT schema. The create scripts for SCOTT schema are located here: https://github.com/oracle/dotnet-db-samples/tree/master/schemas
+2) Most of these samples use the SCOTT or Human Resources (HR) schema. 
+The SCOTT schema create scripts are located here: https://github.com/oracle/dotnet-db-samples/tree/master/schemas
+The HR schema create scripts are located here: https://github.com/oracle/db-sample-schemas
 3) Add Oracle.ManagedDataAccess.dll to the sample application.
 4) Read <GitHub .NET samples directory>\doc\Readme.html, if any. 
 
@@ -116,3 +118,12 @@ Transaction
 Sample 1: Demonstrates the usage of EnlistTransaction API.
 Sample 2: Demonstrates the usage of TransactionScope.
 Sample 3: Demonstrates nested transactions with savepoints.
+
+User-Defined Types (UDT)
+========================
+Nested Table Sample: Demonstrates how to map, fetch, and manipulate a nested table of UDTs that has an inheritance hierarchy (i.e. parent and child types).
+Object UDT Sample: Demonstrates how to map, fetch, and manipulate an Oracle UDT as a .NET custom object.
+Spatial UDT Sample: Demonstrates how to map and fetch types similar to Oracle Spatial types as custom types.
+Ref Sample: Demonstrates how to fetch UDTs referenced by REFs.
+Ref Inheritance Sample: Demonstrates how to obtain and update Custom Type objects from OracleRef objects.
+VARRAY Sample: Demonstrates how to map, fetch, and manipulate the Oracle VARRAY as a custom object. 
