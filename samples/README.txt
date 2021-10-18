@@ -38,9 +38,10 @@ Sample 1: Demonstrates PL/SQL Associative Array binding.
 
 Autonomous Database
 ===================
-Sample 1: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database.
-Sample 2: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database.
-Sample 3: Demonstrates how to connect ODP.NET Core to Oracle Autonomous Database. The sample is located in the .NET Core subdirectory.
+ODP.NET Core Samples: Demonstrates how to connect ODP.NET Core to Oracle Autonomous Database via a console and an ASP.NET Core web app.
+Managed ODP.NET Samples: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database via a console and an ASP.NET web app.
+Unmanaged ODP.NET Sample: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database via a console app.
+
 
 Client Factory
 ==============
@@ -83,7 +84,6 @@ Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET
 =========
 ASP.NET Core Sample: Demonstrates a simple ASP.NET Core web app to connect and retrieve data
 Configuration API Sample: Demonstrates how to use the OracleConfiguration, OracleDataSourceCollection, and OracleOnsServerCollection classes.
-Autonomous DB Sample: Demonstrates how to connect ODP.NET Core to Oracle Autonomous Database.
 Entity Framework Core Sample: Demonstrates Oracle EF Core using DB First and scaffolding scenarios.
 
 Event Handler
