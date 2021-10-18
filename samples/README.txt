@@ -9,7 +9,18 @@ The HR schema create scripts are located here: https://github.com/oracle/db-samp
 4) Read <GitHub .NET samples directory>\doc\Readme.html, if any. 
 
 While these samples are designed for managed ODP.NET or ODP.NET Core, they generally can use unmanaged ODP.NET by incorporating Oracle.DataAccess.dll and 
-adding the correct namespace references (i.e. using Oracle.DataAccess.Client; using Oracle.DataAccess.Types;).
+adding the unmanaged ODP.NET namespace reference (i.e. "using Oracle.DataAccess.Client;" and "using Oracle.DataAccess.Types;").
+
+Running ODP.NET Core Samples from Command Line
+==============================================
+1) Install .NET Core SDK from Microsoft's website: https://dotnet.microsoft.com/download
+2) Open a terminal such as PowerShell, command prompt, or bash. Enter the following commands to create and setup your ODP.NET Core sample: 
+  A) dotnet new console --output <Sample Name>
+  B) dotnet add package Oracle.ManagedDataAccess.Core --version <e.g. 3.21.3>
+3) Replace the contents of Program.cs with the GitHub sample code of interest.
+4) Insert your user id, password, and data source. The sample will have its own README or comments to indicate additional configuration that may be required.
+5) Run using the following command: dotnet run --project <Sample Name>
+
 
 Below is a list of topics that the samples cover:
 
