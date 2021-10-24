@@ -12,7 +12,7 @@ namespace DotNet6_ODP.NET_Demo
     	    Console.WriteLine("This app is using .NET version: {0}", Environment.Version.ToString());
 	    Console.WriteLine();
 
-            //Demo: ODP.NET Core application that connects to Oracle Autonomous DB
+            //Demo: ODP.NET Core application that connects to Oracle Autonomous DB or on-premises DB
 
             //Enter user id and password, such as ADMIN user	
             string conString = "User Id=<USER>;Password=<PASSWORD>;" +
