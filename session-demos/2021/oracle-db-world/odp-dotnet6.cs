@@ -8,9 +8,9 @@ namespace DotNet6_ODP.NET_Demo
         static void Main(string[] args)
         {
 
-	          Console.WriteLine();
-    	      Console.WriteLine("This app is using .NET version: {0}", Environment.Version.ToString());
-	          Console.WriteLine();
+	    Console.WriteLine();
+    	    Console.WriteLine("This app is using .NET version: {0}", Environment.Version.ToString());
+	    Console.WriteLine();
 
             //Demo: ODP.NET Core application that connects to Oracle Autonomous DB
 
