@@ -1,3 +1,15 @@
+CREATE OR REPLACE
+PROCEDURE "GETALLBLOGS_IMPLICIT"
+AS
+  BLOGRESULTS SYS_REFCURSOR;
+
+BEGIN 
+
+  OPEN BLOGRESULTS FOR SELECT * FROM "Blogs";
+    DBMS_SQL.RETURN_RESULT(BLOGRESULTS);
+
+END;
+
 /* Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved. */
  
 /******************************************************************************
@@ -16,15 +28,3 @@
  * limitations under the License.
  *
  *****************************************************************************/
- 
-CREATE OR REPLACE
-PROCEDURE "GETALLBLOGS_IMPLICIT"
-AS
-  BLOGRESULTS SYS_REFCURSOR;
-
-BEGIN 
-
-  OPEN BLOGRESULTS FOR SELECT * FROM "Blogs";
-    DBMS_SQL.RETURN_RESULT(BLOGRESULTS);
-
-END;
