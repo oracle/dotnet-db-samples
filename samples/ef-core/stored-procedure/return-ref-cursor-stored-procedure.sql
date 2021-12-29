@@ -1,3 +1,13 @@
+CREATE OR REPLACE
+PROCEDURE "GETALLBLOGS" (  
+"BLOGRESULTS" OUT SYS_REFCURSOR) IS
+
+BEGIN 
+
+  OPEN BLOGRESULTS FOR SELECT * FROM "Blogs";
+
+END;
+
 /* Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved. */
  
 /******************************************************************************
@@ -16,13 +26,3 @@
  * limitations under the License.
  *
  *****************************************************************************/
-
-CREATE OR REPLACE
-PROCEDURE "GETALLBLOGS" (  
-"BLOGRESULTS" OUT SYS_REFCURSOR) IS
-
-BEGIN 
-
-  OPEN BLOGRESULTS FOR SELECT * FROM "Blogs";
-
-END;
