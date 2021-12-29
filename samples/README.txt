@@ -42,7 +42,6 @@ ODP.NET Core Samples: Demonstrates how to connect ODP.NET Core to Oracle Autonom
 Managed ODP.NET Samples: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database via a console and an ASP.NET web app.
 Unmanaged ODP.NET Sample: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database via a console app.
 
-
 Client Factory
 ==============
 Sample 1: Demonstrates how to use the OracleClientFactory class.
@@ -52,6 +51,10 @@ Command Builder
 Sample 1: Demonstrates OracleCommandBuilder's SchemaSeparator property.
 Sample 2: Demonstrates OracleCommandBuilders's QuoteIdentifier method.
 Sample 3: Demonstrates OracleCommandBuilders's UnquoteIdentifier method.
+
+Configuration API
+=================
+Samples demonstrate how to use the OracleConfiguration, OracleDataSourceCollection, and OracleOnsServerCollection classes.
 
 Connection
 ==========
@@ -83,7 +86,6 @@ Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET
 .NET Core
 =========
 ASP.NET Core Sample: Demonstrates a simple ASP.NET Core web app to connect and retrieve data
-Configuration API Sample: Demonstrates how to use the OracleConfiguration, OracleDataSourceCollection, and OracleOnsServerCollection classes.
 Entity Framework Core Sample: Demonstrates Oracle EF Core using DB First and scaffolding scenarios.
 
 Event Handler
