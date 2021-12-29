@@ -88,9 +88,13 @@ Sample 3: Demonstrates DML operations on LOB columns.
 Sample 4: Demonstrates how to populate a DataSet from multiple output Ref Cursors from a stored procedure.
 Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET).
 
-.NET Core
-=========
-Entity Framework Core Sample: Demonstrates Oracle EF Core using DB First and scaffolding scenarios.
+Entity Framework Core
+=====================
+Autonomous Database Sample: Demonstrates Oracle EF Core connecting to Oracle Autonomous Database.
+Dependency Injection Sample: Demonstrates using dependency injection and ASP.NET Core with Oracle EF Core.
+Getting Started Sample: Demonstrates a basic Oracle EF Core scenario using migrations and scaffolding.
+Keyless Entity Types Sample: Demonstrates Oracle EF Core keyless entity types with relational and materialized views.
+Stored Procedure Result Set Samples: Demonstrates using PL/SQL that returns either an explicitly or implicitly bound REF Cursor.
 
 Event Handler
 =============
