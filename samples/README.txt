@@ -32,6 +32,11 @@ Parameter Array Binding
 =======================
 Sample 1: Demonstrates parameter array binding.
 
+ASP.NET Core
+============
+ASP.NET Core 2.x: Demonstrates a simple ASP.NET Core 2.x web app to connect and retrieve data.
+ASP.NET Core 3.x: Demonstrates a simple ASP.NET Core 3.x web app to connect and retrieve data.
+
 PL/SQL Associative Array
 ========================
 Sample 1: Demonstrates PL/SQL Associative Array binding.
@@ -85,7 +90,6 @@ Sample 5: Demonstrates how to populate a DataSet using Visual Basic .NET (VB.NET
 
 .NET Core
 =========
-ASP.NET Core Sample: Demonstrates a simple ASP.NET Core web app to connect and retrieve data
 Entity Framework Core Sample: Demonstrates Oracle EF Core using DB First and scaffolding scenarios.
 
 Event Handler
