@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-// ODP.NET namespace added to access OracleConfiguration class
+// ODP.NET namespace added
 using Oracle.ManagedDataAccess.Client;
 
 namespace OracleEFCore_ADB
@@ -16,7 +16,6 @@ namespace OracleEFCore_ADB
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-
                 // Configure ODP.NET connection string
                 optionsBuilder.UseOracle(@"User Id=<USER>;Password=<PASSWORD>;Data Source=<TNS NAME>");
             }
