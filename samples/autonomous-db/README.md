@@ -4,3 +4,5 @@ These ODP.NET Autonomous Database code samples are intended to be used with the 
 * [Unmanaged ODP.NET for ADB Quick Start](https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetfw.html)
 
 These samples demonstrate how to connect to any Oracle Autonomous Database, including Autonomous Transaction Processing, Autonomous Data Warehouse, and Autonomous JSON Database, with a .NET console or ASP.NET web app.
+
+You can find [Oracle Entity Framework Core for Autonomous Database code sample here](https://github.com/oracle/dotnet-db-samples/tree/master/samples/ef-core/autonomous-db).
