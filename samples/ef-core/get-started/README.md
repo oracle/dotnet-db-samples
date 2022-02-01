@@ -1,3 +1,9 @@
+# Getting Started with Oracle Entity Framework Core
+
+There are two sets of sample code showing how to perform several basic tasks with Oracle EF Core. One sample can be run with earlier EF Core versions. The second sample is optimized for EF Core 6.
+
+The sample code and below instructions show how to create a data model, save it to an Oracle database, insert data, query the data, use migrations to modify the schema, and reverse engineer.
+
 Oracle Entity Framework Core is currently available on [nuget.org](https://www.nuget.org/packages/Oracle.EntityFrameworkCore/).
 
 To use the sample code, create a new Oracle user. Log into the Oracle Database with DBA privileges and run the following commands:
