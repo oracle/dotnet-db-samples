@@ -4,8 +4,8 @@ namespace OracleEFCore6
 {
     class Program
     {
-        //This sample code demonstrates how to get started with Oracle Entity Framework Core 6 
-        //It can connecto to on-premises Oracle DB or walletless Oracle Autonomous DB
+        //Demonstrates how to get started using Oracle Entity Framework Core 6 
+        //Code connects to on-premises Oracle DB or walletless Oracle Autonomous DB
         
         public class BloggingContext : DbContext
         {
@@ -61,22 +61,20 @@ namespace OracleEFCore6
     }
 }
 
-
-/* Copyright (c) 2022, Oracle and/or its affiliates. All rights reserved. */
+/* Copyright (c) 2018, 2022 Oracle and/or its affiliates. All rights reserved. */
+/* Copyright (c) .NET Foundation and Contributors                              */
 
 /******************************************************************************
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
  *
- * You may not use the identified files except in compliance with The MIT
- * License (the "License.")
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * You may obtain a copy of the License at
- * https://github.com/oracle/Oracle.NET/blob/master/LICENSE
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *   limitations under the License.
+ * 
  *****************************************************************************/
