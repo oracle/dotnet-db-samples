@@ -14,7 +14,7 @@ namespace OracleEFCore6
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseOracle(@"User Id=blog;Password=<Password>;Data Source=<Net Service Name");
+                optionsBuilder.UseOracle(@"User Id=blog;Password=<Password>;Data Source=<Net Service Name>");
             }
         }
 
