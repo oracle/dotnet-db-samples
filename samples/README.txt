@@ -47,6 +47,10 @@ ODP.NET Core Samples: Demonstrates how to connect ODP.NET Core to Oracle Autonom
 Managed ODP.NET Samples: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database via a console and an ASP.NET web app.
 Unmanaged ODP.NET Sample: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database via a console app.
 
+Bulk Copy
+=========
+Sample 1: Demonstrates how to use ODP.NET bulk copy. Sample works for both managed and core ODP.NET.
+
 Client Factory
 ==============
 Sample 1: Demonstrates how to use the OracleClientFactory class.
