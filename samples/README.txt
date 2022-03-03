@@ -104,6 +104,10 @@ Event Handler
 =============
 Sample 1: Demonstrates how to trap the OracleRowUpdatingEvent and OracleRowUpdatedEvent using VB.NET.
 
+Oracle Identity and Access Management
+=====================================
+Sample 1: Demonstrates how to use OCI .NET SDK to retrieve, authenticate, and refresh Oracle database tokens.
+
 JSON
 ====
 Select JSON Sample: Demonstrates row insert into and query against a JSON table.
