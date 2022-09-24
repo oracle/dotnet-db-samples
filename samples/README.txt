@@ -36,6 +36,7 @@ ASP.NET Core
 ============
 ASP.NET Core 2.x: Demonstrates a simple ASP.NET Core 2.x web app to connect and retrieve data.
 ASP.NET Core 3.x: Demonstrates a simple ASP.NET Core 3.x web app to connect and retrieve data.
+ASP.NET Core 6: Demonstrates a simple ASP.NET Core 6 web app to connect and retrieve data.
 
 PL/SQL Associative Array
 ========================
@@ -46,6 +47,10 @@ Autonomous Database
 ODP.NET Core Samples: Demonstrates how to connect ODP.NET Core to Oracle Autonomous Database via a console and an ASP.NET Core web app.
 Managed ODP.NET Samples: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database via a console and an ASP.NET web app.
 Unmanaged ODP.NET Sample: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database via a console app.
+
+Azure Active Directory
+======================
+Demonstrates connecting to Oracle Autonomous Database using an Azure Active Directory token with ODP.NET Core, managed, and unmanaged.
 
 Bulk Copy
 =========
