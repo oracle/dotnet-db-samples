@@ -3,7 +3,7 @@ This directory contains pointers to the Oracle .NET session demo code or tutoria
 **What’s New for Oracle .NET and Entity Framework Core Developers**
 * [Oracle EF Core 6 and Oracle EF Core 7 console app](https://github.com/oracle/dotnet-db-samples/tree/master/samples/ef-core/get-started)
   * Note: The same demo code was used for both demos with the Oracle and EF Core assemblies updated to use either version 6 or 7.
-* ODP.NET Async vs. ODP.NET Sync
+* [ODP.NET Async](https://github.com/oracle/dotnet-db-samples/blob/master/session-demos/2022/oracle-cloudworld/async-odpnet.cs) vs. [ODP.NET Sync](https://github.com/oracle/dotnet-db-samples/blob/master/session-demos/2022/oracle-cloudworld/sync-odpnet.cs)
 * [ODP.NET User-Defined Types (managed and core) console apps](https://github.com/oracle/dotnet-db-samples/tree/master/samples/udt)
 * [ODP.NET Binary JSON and Client Initiated Continuous Query Notification (CICQN) console app](https://github.com/oracle/dotnet-db-samples/tree/master/session-demos/2021/cicqn-json)
 
