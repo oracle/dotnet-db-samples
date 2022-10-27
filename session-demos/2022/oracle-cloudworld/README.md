@@ -1,7 +1,7 @@
 This directory contains pointers to the Oracle .NET session demo code or tutorials during [Oracle CloudWorld](https://www.oracle.com/cloudworld/) 2022. The following demos were shown:
 
 **What’s New for Oracle .NET and Entity Framework Core Developers**
-* [Oracle EF Core 6 and Oracle EF Core 7 console app](https://github.com/oracle/dotnet-db-samples/blob/master/samples/ef-core/get-started/create-model-save-query-scaffold-efc6.cs)
+* [Oracle EF Core 6 and Oracle EF Core 7 console app](https://github.com/oracle/dotnet-db-samples/tree/master/samples/ef-core/get-started)
   * Note: The same demo code was used for both demos with the Oracle and EF Core assemblies updated to use either version 6 or 7.
 * ODP.NET Async vs. ODP.NET Sync
 * [ODP.NET User-Defined Types (managed and core) console apps](https://github.com/oracle/dotnet-db-samples/tree/master/samples/udt)
