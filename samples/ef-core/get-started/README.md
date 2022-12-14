@@ -1,7 +1,7 @@
 # Getting Started with Oracle Entity Framework Core
 
 There are two sets of sample code showing how to perform several basic tasks with Oracle EF Core. 
-1. [Getting Started with Oracle EF Core 6](https://github.com/oracle/dotnet-db-samples/blob/master/samples/ef-core/get-started/create-model-save-query-scaffold-efc6.cs)
+1. [Getting Started with Oracle EF Core 6 and 7](https://github.com/oracle/dotnet-db-samples/blob/master/samples/ef-core/get-started/create-model-save-query-scaffold-efc6.cs)
 2. [Getting Started with Oracle EF Core 5 and earlier releases](https://github.com/oracle/dotnet-db-samples/blob/master/samples/ef-core/get-started/create-model-save-query-scaffold.cs)
 
 The sample code and below instructions show how to create a data model, save it to an Oracle database, insert data, query the data, use migrations to modify the schema, and reverse engineer.
