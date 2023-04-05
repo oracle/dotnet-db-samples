@@ -1,26 +1,8 @@
-/* Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved. */
- 
-/******************************************************************************
- *
- * You may not use the identified files except in compliance with The MIT
- * License (the "License.")
- *
- * You may obtain a copy of the License at
- * https://github.com/oracle/Oracle.NET/blob/master/LICENSE
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- *****************************************************************************/
- 
 using System;
 using System.Threading;
 using System.Transactions;
 using Oracle.DataAccess.Client;
+//using Oracle.ManagedDataAccess.Client;
 
 namespace AppContinuity
 {
@@ -51,7 +33,9 @@ namespace AppContinuity
             // B) In client app, modify the following connection attributes in this sample code:
             //  1) Password: Password you specified while setting up HR schema setup.
             //  2) Data Source: Connection descriptor or TNS alias to connect to the database.
-            // Be sure to use unmanaged ODP.NET 12.2 or higher, which supports AC.
+            //  3) Use the Oracle.ManagedDataAccess.Client namespace for managed ODP.NET or ODP.NET Core. 
+            //     Or use Oracle.Data.Client namespace for unmanaged ODP.NET.
+            // Be sure to use a minimum version of ODP.NET Core 23c, managed ODP.NET 23c, or unmanaged ODP.NET 12.2 for AC support.
 
             //Runtime instructions:
             // You can intermittently execute the following command on the database
@@ -102,3 +86,22 @@ namespace AppContinuity
         }
     }
 }
+
+/* Copyright (c) 2019, 2023 Oracle and/or its affiliates. All rights reserved. */
+ 
+/******************************************************************************
+ *
+ * You may not use the identified files except in compliance with The MIT
+ * License (the "License.")
+ *
+ * You may obtain a copy of the License at
+ * https://github.com/oracle/Oracle.NET/blob/master/LICENSE
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ *****************************************************************************/
