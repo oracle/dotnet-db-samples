@@ -11,21 +11,24 @@ and other Oracle .NET components. .NET products for Oracle Database are free of 
 <li>Oracle Developer Tools for Visual Studio - a tightly integrated design-time "Add-in" for Microsoft Visual Studio that provides full Oracle .NET application lifecycle management, including PL/SQL debugging and schema comparison tools.</li>
   <li>Oracle Developer Tools for VS Code - enables Visual Studio Code developers to connect to Oracle Database and Oracle Autonomous Database, edit SQL and PL/SQL with autocomplete, Intellisense, breadcrumbs, and syntax coloring, execute SQL and PL/SQL and view and save the results in formats such as .CSV and JSON. The Oracle Database Explorer tree control allows you to quickly explore your database schema, view table data, and edit, execute and save PL/SQL.</li>
 <li>Oracle Providers for ASP.NET - a collection of ASP.NET providers that use Oracle Database as the data source. ASP.NET applications can store various types of website state in an Oracle database, which can then be shared across the application.</li>
-<li>Oracle Database Extensions for .NET - a feature of Oracle Database on Windows that makes it easy to develop, deploy, and run stored procedures and functions written in a .NET managed language</li>
 </ul>
 
 ## Getting Started
-Oracle .NET components are bundled together and installed as part of Oracle Data Access Components (ODAC). Downloads and installation instructions are available from the <a href="https://www.oracle.com/database/technologies/net-downloads.html">OTN .NET Tech Center download page</a> and <a href="https://www.nuget.org/packages?q=oracle">NuGet Gallery<a>. Oracle Developer Tools for VS Code can be downloaded from the <a href="https://marketplace.visualstudio.com/items?itemName=Oracle.oracledevtools">VS Code Marketplace</a>. Installation instructions are available as part of each download page. The installation instructions list the software prerequisites for the version downloaded.
+Oracle .NET components are available individually on NuGet Gallery or bundled together as part of Oracle Data Access Components (ODAC). Provider downloads are available from <a href="https://www.nuget.org/packages?q=oracle">NuGet Gallery<a> and <a href="https://www.oracle.com/database/technologies/net-downloads.html">Oracle .NET download page</a>. Oracle Developer Tools for VS Code or Visual Studio can be downloaded from the <a href="https://marketplace.visualstudio.com/items?itemName=Oracle.oracledevtools">VS Code Marketplace</a> or <a href="https://marketplace.visualstudio.com/publishers/OracleCorporation">Visual Studio Marketplace</a>, respectively.
 
 ## Tutorials
-For beginning Oracle .NET developers, these <a href="https://www.oracle.com/tools/technologies/quickstart-dotnet-for-oracle-database.html">on-premises .NET database tutorials</a> and <a href="https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html">Autonomous Database .NET tutorials</a> will assist you in getting started with .NET application development with Oracle Database. Video tutorials are available from the  <a href="https://www.youtube.com/user/OracleDOTNETTeam">Oracle .NET YouTube site.
+For beginning Oracle .NET developers, these <a href="https://www.oracle.com/tools/technologies/quickstart-dotnet-for-oracle-database.html">on-premises .NET database tutorials</a> and <a href="https://www.oracle.com/database/technologies/appdev/dotnet/adbdotnetquickstarts.html">Autonomous Database .NET tutorials</a> will assist you in getting started with .NET application development with Oracle Database. 
+  
+Oracle .NET video tutorials are available from the <a href="https://www.youtube.com/user/OracleDOTNETTeam">Oracle .NET YouTube site.
+  
+For those that want to build an end-to-end basic .NET web app for Oracle Database in the cloud, try the <a href="https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3359">.NET Development with Oracle Autonomous Database Quick Start</a>. The tutorial takes about an hour to complete and is free. By the end, you will have a complete running .NET website and database.
 
 ## More Information
 <ul>
 <li><a href="https://docs.oracle.com/en/database/oracle/oracle-data-access-components/index.html">Documentation</a></li>
 <li>Contibutions to code samples should review <a href="CONTRIBUTING.md">CONTRIBUTING</a> for more details.</li>
 <li>You may use files in this repository only if in compliance with the <a href="LICENSE">LICENSE</a>.</li>
-<li>More Oracle .NET development information can be found at the <a href="http://otn.oracle.com/dotnet">OTN .NET Developer Center</a>.</li>
+<li>More Oracle .NET development information can be found at the <a href="http://otn.oracle.com/dotnet">Oracle .NET Developer Center</a>.</li>
 </ul>
 
 ## Contributing
