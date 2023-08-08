@@ -1,8 +1,8 @@
 using System;
 using System.Threading;
 using System.Transactions;
-using Oracle.DataAccess.Client;
-//using Oracle.ManagedDataAccess.Client;
+//using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace AppContinuity
 {
