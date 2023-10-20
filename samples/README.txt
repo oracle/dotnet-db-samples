@@ -16,7 +16,7 @@ Running ODP.NET Core Samples from Command Line
 1) Install .NET Core SDK from Microsoft's website: https://dotnet.microsoft.com/download
 2) Open a terminal such as PowerShell, command prompt, or bash. Enter the following commands to create and setup your ODP.NET Core sample: 
   A) dotnet new console --output <Sample Name>
-  B) dotnet add package Oracle.ManagedDataAccess.Core --version <e.g. 3.21.3>
+  B) dotnet add package Oracle.ManagedDataAccess.Core --version <e.g. 3.21.120>
 3) Replace the contents of Program.cs with the GitHub sample code of interest.
 4) Insert your user id, password, and data source. The sample will have its own README or comments to indicate additional configuration that may be required.
 5) Run using the following command: dotnet run --project <Sample Name>
@@ -41,6 +41,11 @@ ASP.NET Core 6: Demonstrates a simple ASP.NET Core 6 web app to connect and retr
 PL/SQL Associative Array
 ========================
 Sample 1: Demonstrates PL/SQL Associative Array binding.
+
+Asynchronous Programming
+========================
+Async: Demonstrates using asynchronous ODP.NET and times its execution time.
+Sync: Demonstrates using synchronous ODP.NET and times its execution time. Compare execution time between the two console apps.
 
 Autonomous Database
 ===================
