@@ -25,7 +25,7 @@ class ODP_OTel_Demo
       //.AddZipkinExporter()  // OpenTelemetry.Exporter.Zipkin NuGet package extension method
       .Build()!;
 
-    static ActivitySource activitySource = new ActivitySource("ODPNET");
+    static ActivitySource activitySource = new ActivitySource("ODP.NET App");
     
     static string conString = @"User Id=hr;Password=<PASSWORD>;Data Source=<NET SERVICE NAME>;";
 
