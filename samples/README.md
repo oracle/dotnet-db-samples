@@ -107,7 +107,7 @@ Entity Framework Core
 * Autonomous Database Sample: Demonstrates Oracle EF Core connecting to Oracle Autonomous Database. <br>
 * Dependency Injection Sample: Demonstrates using dependency injection and ASP.NET Core with Oracle EF Core. <br>
 * Getting Started Sample: Demonstrates a basic Oracle EF Core scenario using migrations and scaffolding. <br>
-* JSON Columns Sample: Demonstrates how to create an owned entity, insert, queriy, updates and delete JSON column data. <br>
+* JSON Columns Sample: Demonstrates how to create an owned entity, insert, query, update, and delete JSON column data. <br>
 * Keyless Entity Types Sample: Demonstrates Oracle EF Core keyless entity types with relational and materialized views. <br>
 * Stored Procedure Result Set Samples: Demonstrates using PL/SQL that returns either an explicitly or implicitly bound REF Cursor. 
 
