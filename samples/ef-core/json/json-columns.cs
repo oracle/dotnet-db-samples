@@ -49,7 +49,7 @@ namespace ODPJsonColumns
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
                 optionsBuilder.UseOracle("User Id=<USER>; Password=<PASSWORD>; Data Source=<DATA SOURCE>"
-                    , b => b.UseOracleSQLCompatibility(OracleSQLCompatibility.DatabaseVersion21)); ;
+                    , b => b.UseOracleSQLCompatibility(OracleSQLCompatibility.DatabaseVersion21));
             }
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -76,8 +76,8 @@ namespace ODPJsonColumns
                     Name = "John Smith",
                     Contact = new ContactDetails()
                     {
-                    Phone = "555 123 4567",
-                    Address = new Address("1 Any Street", "Austin", "78741", "US")
+                        Phone = "555 123 4567",
+                        Address = new Address("1 Any Street", "Austin", "78741", "US")
                     }
                 };
                 
