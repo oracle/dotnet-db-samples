@@ -1,6 +1,6 @@
 <!-- Note: The Oracle .NET Code Sample Repository has moved to this <a href="https://github.com/oracle/oracle-db-examples/tree/master/dotnet">new location</a>. -->
 
-# Oracle .NET Code Sample Respository
+# Oracle .NET Code Sample Repository
 
 ## About Oracle .NET
 This repository provides .NET code samples for Oracle developers, specifically for Oracle Data Provider for .NET (ODP.NET)
