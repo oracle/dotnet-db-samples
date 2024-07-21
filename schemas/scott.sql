@@ -1,32 +1,13 @@
-Rem  Copyright (c) 2016 by Oracle Corporation
-Rem
-Rem  You may not use the identified files except in compliance with The MIT
-Rem  License (the "License.")
-Rem
-Rem  You may obtain a copy of the License at
-Rem  https://github.com/oracle/Oracle.NET/blob/master/LICENSE
-Rem
-Rem  Unless required by applicable law or agreed to in writing, software
-Rem  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-Rem  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-Rem
-Rem  See the License for the specific language governing permissions and
-Rem  limitations under the License.
-Rem
 Rem  NAME
-REM    scott.sql
+Rem    scott.sql
 Rem  
 Rem  DESCRIPTION
 Rem    SCOTT is a database user whose schema is used for Oracle code demonstrations
-Rem    Be sure to replace <PASSWORD> on lines 31 and 34 with your preferred password. 
+Rem    Be sure to replace <PASSWORD> on lines 12 and 15 with your preferred password. 
 Rem    Historically, "tiger" has been SCOTT schema's password.
-
 
 SET TERMOUT OFF
 SET ECHO OFF
-
-rem CONGDON    Invoked in RDBMS at build time.	 29-DEC-1988
-rem OATES:     Created: 16-Feb-83
 
 GRANT CONNECT,RESOURCE,UNLIMITED TABLESPACE TO SCOTT IDENTIFIED BY <PASSWORD>;
 ALTER USER SCOTT DEFAULT TABLESPACE USERS;
@@ -69,13 +50,13 @@ INSERT INTO EMP VALUES
 INSERT INTO EMP VALUES
 (7782,'CLARK','MANAGER',7839,to_date('9-6-1981','dd-mm-yyyy'),2450,NULL,10);
 INSERT INTO EMP VALUES
-(7788,'SCOTT','ANALYST',7566,to_date('13-JUL-87')-85,3000,NULL,20);
+(7788,'SCOTT','ANALYST',7566,to_date('13-07-87','dd-mm-rr')-85,3000,NULL,20);
 INSERT INTO EMP VALUES
 (7839,'KING','PRESIDENT',NULL,to_date('17-11-1981','dd-mm-yyyy'),5000,NULL,10);
 INSERT INTO EMP VALUES
 (7844,'TURNER','SALESMAN',7698,to_date('8-9-1981','dd-mm-yyyy'),1500,0,30);
 INSERT INTO EMP VALUES
-(7876,'ADAMS','CLERK',7788,to_date('13-JUL-87')-51,1100,NULL,20);
+(7876,'ADAMS','CLERK',7788,to_date('13-07-87','dd-mm-rr')-51,1100,NULL,20);
 INSERT INTO EMP VALUES
 (7900,'JAMES','CLERK',7698,to_date('3-12-1981','dd-mm-yyyy'),950,NULL,30);
 INSERT INTO EMP VALUES
@@ -104,3 +85,18 @@ COMMIT;
 
 SET TERMOUT ON
 SET ECHO ON
+
+Rem  Copyright (c) 2016, 2024 by Oracle Corporation
+Rem
+Rem  You may not use the identified files except in compliance with The MIT
+Rem  License (the "License.")
+Rem
+Rem  You may obtain a copy of the License at
+Rem  https://github.com/oracle/dotnet-db-samples/blob/master/LICENSE.txt
+Rem
+Rem  Unless required by applicable law or agreed to in writing, software
+Rem  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+Rem  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+Rem
+Rem  See the License for the specific language governing permissions and
+Rem  limitations under the License.
