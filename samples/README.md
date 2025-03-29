@@ -16,7 +16,7 @@ Running ODP.NET Core Samples from Command Line
 1) Install .NET Core SDK from Microsoft's website: https://dotnet.microsoft.com/download
 2) Open a terminal such as PowerShell, command prompt, or bash. Enter the following commands to create and setup your ODP.NET Core sample: <br>
   A) dotnet new console --output (Sample Name) <br>
-  B) dotnet add package Oracle.ManagedDataAccess.Core --version (e.g. 23.5.0)
+  B) dotnet add package Oracle.ManagedDataAccess.Core --version (e.g. 23.8.0)
 4) Replace the contents of Program.cs with the GitHub sample code of interest.
 5) Insert your user id, password, and data source. The sample will have its own README or comments to indicate additional configuration that may be required.
 6) Run using the following command: dotnet run --project (Sample Name)
@@ -109,7 +109,8 @@ Entity Framework Core
 * Getting Started Sample: Demonstrates a basic Oracle EF Core scenario using migrations and scaffolding. <br>
 * JSON Columns Sample: Demonstrates how to create an owned entity, insert, query, update, and delete JSON column data. <br>
 * Keyless Entity Types Sample: Demonstrates Oracle EF Core keyless entity types with relational and materialized views. <br>
-* Stored Procedure Result Set Samples: Demonstrates using PL/SQL that returns either an explicitly or implicitly bound REF Cursor. 
+* Stored Procedure Result Set Samples: Demonstrates using PL/SQL that returns either an explicitly or implicitly bound REF Cursor. <br>
+* T4 Text Template Samples: Demonstrates data type mapping customization when scaffolding.
 
 Event Handler
 -------------
