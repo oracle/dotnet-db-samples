@@ -1,0 +1,142 @@
+[
+  {
+    "HotelName": "The Lodge by the Sea",
+    "Description": "A legendary beach hotel with beautiful sunsets, outdoor activites, and near top restaurants.",
+    "HotelId": 1,
+    "Rating": 9.5,
+    "HasParking": true
+  },
+  {
+    "HotelName": "Hotel New York",
+    "Description": "An urban retreat in the heart of New York City known for its skyline views and well-appointed rooms.",
+    "HotelId": 2,
+    "Rating": 8,
+    "HasParking": false
+  },
+  {
+    "HotelName": "Maui Island Retreat",
+    "Description": "A luxury Maui beach resort with environmentally sustainable design and privacy.",
+    "HotelId": 3,
+    "Rating": 3,
+    "HasParking": true
+  },
+  {
+    "HotelName": "Hotel San Francisco",
+    "Description": "A historic hotel in the middle of downtown with modern elegance and legendary service.",
+    "HotelId": 4,
+    "Rating": 7.9,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Mountain Lake Resort",
+    "Description": "A wellness retreat set in the Swiss Alps, offering spa, yoga, and cross-country skiing in tranquil surroundings.",
+    "HotelId": 5,
+    "Rating": 7,
+    "HasParking": true
+  },
+  {
+    "HotelName": "The Standard",
+    "Description": "Palace-level luxury in London, famed for gourmet dining and the epitome of service.floral lobbies.",
+    "HotelId": 6,
+    "Rating": 6.2,
+    "HasParking": false
+  },
+  {
+    "HotelName": "Desert Dream",
+    "Description": "An oasis of luxury for relaxation and fine dining.",
+    "HotelId": 7,
+    "Rating": 8,
+    "HasParking": true
+  },
+  {
+    "HotelName": "The Cottages by the Lake",
+    "Description": "Countryside luxury, blending warm design, personal attention, and water activites.",
+    "HotelId": 8,
+    "Rating": 5,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Paris",
+    "Description": "Historic hotel emblematic of French refinement, dining, and service.",
+    "HotelId": 9,
+    "Rating": 3.8,
+    "HasParking": true
+  },
+  {
+    "HotelName": "Marina Hotel",
+    "Description": "A sanctuary for sailing enthusiasts on the beach.",
+    "HotelId": 10,
+    "Rating": 6,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Grand Hotel",
+    "Description": "Iconic Tokyo landmark offering classic luxury and a celebrated history next to the city business center.",
+    "HotelId": 11,
+    "Rating": 10,
+    "HasParking": true
+  },
+  {
+    "HotelName": "The Cabins",
+    "Description": "Located at the edge of a large forest. Perfect for hiking and exploring.",
+    "HotelId": 12,
+    "Rating": 5.5,
+    "HasParking": false
+  },
+  {
+    "HotelName": "Botique Hotel",
+    "Description": "A chateau-hotel in wine country surrounded by the serene beauty of the nature.",
+    "HotelId": 13,
+    "Rating": 2,
+    "HasParking": true
+  },
+  {
+    "HotelName": "Business Hotel",
+    "Description": "For the executive wanting to maximize productivity with minimal distractions.",
+    "HotelId": 14,
+    "Rating": 4.9,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Country Motel",
+    "Description": "An affordable hotel in the outskirts of town with basic services and nearby trails.",
+    "HotelId": 15,
+    "Rating": 1,
+    "HasParking": true
+  },
+  {
+    "HotelName": "The HK",
+    "Description": "Iconic urban hotel in Hong Kong with harbor views and banquet dining.",
+    "HotelId": 16,
+    "Rating": 8.1,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Nature Inn",
+    "Description": "Located by a river in the hills, this hotel offers rooms with private terraces and stunning views.",
+    "HotelId": 17,
+    "Rating": 2.5,
+    "HasParking": true
+  },
+  {
+    "HotelName": "Casino Hotel",
+    "Description": "Elegance, renowed entertainment, and the largest choice of games on the Las Vegas strip.",
+    "HotelId": 18,
+    "Rating": 7.3,
+    "HasParking": false
+  },
+  {
+    "HotelName": "The Island Hotel",
+    "Description": "Located in the South Pacific, this luxurious resort has beach and water activities.",
+    "HotelId": 19,
+    "Rating": 4,
+    "HasParking": true
+  },
+  {
+    "HotelName": "The Healthy Inn",
+    "Description": "A renowned wellness resort in California, offering holistic health programs and yoga.",
+    "HotelId": 20,
+    "Rating": 3.2,
+    "HasParking": false
+  }
+]
