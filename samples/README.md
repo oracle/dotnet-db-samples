@@ -24,6 +24,10 @@ Running ODP.NET Core Samples from Command Line
 
 Below is the feature list the samples cover. Each feature's sample has its own subdirectory.
 
+AI Vector
+----------------------
+* Search Vector Stores and Collections Sample: Load and vectorize data from .NET. Then, perform exact match searches and similarity searches against the data set.
+
 Application Continuity
 ----------------------
 * Sample 1: Unmanaged ODP.NET Application Continuity code sample with setup and runtime demo instructions.
@@ -53,9 +57,9 @@ Autonomous Database
 * Managed ODP.NET Samples: Demonstrates how to connect managed ODP.NET to Oracle Autonomous Database via a console and an ASP.NET web app. <br>
 * Unmanaged ODP.NET Sample: Demonstrates how to connect unmanaged ODP.NET to Oracle Autonomous Database via a console app.
 
-Azure Active Directory
+Azure Active Directory/Microsoft Entra ID
 ----------------------
-* Demonstrates connecting to Oracle Autonomous Database using an Azure Active Directory token with ODP.NET Core, managed, and unmanaged.
+* Demonstrates connecting to Oracle Autonomous Database using a Microsoft Entra ID token with ODP.NET Core, managed, and unmanaged.
 
 Bulk Copy
 ---------
@@ -177,3 +181,4 @@ User-Defined Types (UDT)
 * Ref Sample: Demonstrates how to fetch UDTs referenced by REFs. <br>
 * Ref Inheritance Sample: Demonstrates how to obtain and update Custom Type objects from OracleRef objects. <br>
 * VARRAY Sample: Demonstrates how to map, fetch, and manipulate the Oracle VARRAY as a custom object. 
+
