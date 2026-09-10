@@ -1,7 +1,7 @@
 [
   {
     "HotelName": "The Lodge by the Sea",
-    "Description": "A legendary beach hotel with beautiful sunsets, outdoor activites, and near top restaurants.",
+    "Description": "A legendary beach hotel with beautiful sunsets, outdoor activities, and near top restaurants.",
     "HotelId": 1,
     "Rating": 9.5,
     "HasParking": true
@@ -36,7 +36,7 @@
   },
   {
     "HotelName": "The Standard",
-    "Description": "Palace-level luxury in London, famed for gourmet dining and the epitome of service.floral lobbies.",
+    "Description": "Palace-level luxury in London, famed for gourmet dining and the epitome of service.",
     "HotelId": 6,
     "Rating": 6.2,
     "HasParking": false
@@ -50,7 +50,7 @@
   },
   {
     "HotelName": "The Cottages by the Lake",
-    "Description": "Countryside luxury, blending warm design, personal attention, and water activites.",
+    "Description": "Countryside luxury, blending warm design, personal attention, and water activities.",
     "HotelId": 8,
     "Rating": 5,
     "HasParking": false
@@ -84,8 +84,8 @@
     "HasParking": false
   },
   {
-    "HotelName": "Botique Hotel",
-    "Description": "A chateau-hotel in wine country surrounded by the serene beauty of the nature.",
+    "HotelName": "Boutique Hotel",
+    "Description": "A chateau-hotel in wine country surrounded by the serene beauty of nature.",
     "HotelId": 13,
     "Rating": 2,
     "HasParking": true
@@ -99,7 +99,7 @@
   },
   {
     "HotelName": "The Country Motel",
-    "Description": "An affordable hotel in the outskirts of town with basic services and nearby trails.",
+    "Description": "An affordable hotel on the outskirts of town with basic services and nearby trails.",
     "HotelId": 15,
     "Rating": 1,
     "HasParking": true
@@ -120,7 +120,7 @@
   },
   {
     "HotelName": "Casino Hotel",
-    "Description": "Elegance, renowed entertainment, and the largest choice of games on the Las Vegas strip.",
+    "Description": "Elegance, renowned entertainment, and the largest choice of games on the Las Vegas strip.",
     "HotelId": 18,
     "Rating": 7.3,
     "HasParking": false
