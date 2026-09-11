@@ -1,7 +1,7 @@
 ﻿DECLARE 
     ONNX_MOD_FILE VARCHAR2(100) := 'all_MiniLM_L12_v2.onnx';
     MODNAME VARCHAR2(500);
-    LOCATION_URI VARCHAR2(200) := 'https://adwc4pm.objectstorage.us-ashburn-1.oci.customer-oci.com/p/eLddQappgBJ7jNi6Guz9m9LOtYe2u8LWY19GfgU8flFK4N9YgP4kTlrE9Px3pE12/n/adwc4pm/b/OML-Resources/o/';
+    LOCATION_URI VARCHAR2(200) := 'https://adwc4pm.objectstorage.us-ashburn-1.oci.customer-oci.com/p/iPX9W0MZeRkwJKWdFmdJCemmN-iKAl_bFvNGYLW7YqIrw4kKsukL24J2q93Beb9S/n/adwc4pm/b/OML-ai-models/o/';
 
 BEGIN
     DBMS_OUTPUT.PUT_LINE('ONNX model file name in object storage is: '||ONNX_MOD_FILE); 
