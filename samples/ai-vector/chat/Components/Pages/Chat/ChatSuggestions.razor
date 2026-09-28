@@ -1,0 +1,67 @@
+@inject ChatAgents Agents
+
+@if (suggestions is not null)
+{
+    <div class="page-width suggestions">
+        @foreach (var suggestion in suggestions)
+        {
+            <button class="btn-subtle" @onclick="@(() => AddSuggestionAsync(suggestion))">
+                @suggestion
+            </button>
+        }
+    </div>
+}
+
+@code {
+    private string[]? suggestions;
+    private CancellationTokenSource? cancellation;
+
+    [Parameter]
+    public EventCallback<ChatMessage> OnSelected { get; set; }
+
+    public void Clear()
+    {
+        suggestions = null;
+        cancellation?.Cancel();
+    }
+
+    public void Update(IReadOnlyList<ChatMessage> messages)
+    {
+        // Runs in the background and handles its own cancellation/errors
+        _ = UpdateSuggestionsAsync(messages);
+    }
+
+    private async Task UpdateSuggestionsAsync(IReadOnlyList<ChatMessage> messages)
+    {
+        cancellation?.Cancel();
+        cancellation = new CancellationTokenSource();
+
+        try
+        {
+            var response = await Agents.Suggestions.RunAsync<string[]>(
+                [.. ReduceMessages(messages), new(ChatRole.User, ChatAgentPrompts.Suggestions)],
+                cancellationToken: cancellation.Token);
+            suggestions = response.Result;
+
+            StateHasChanged();
+        }
+        catch (Exception ex) when (ex is not OperationCanceledException)
+        {
+            await DispatchExceptionAsync(ex);
+        }
+    }
+
+    private async Task AddSuggestionAsync(string text)
+    {
+        await OnSelected.InvokeAsync(new(ChatRole.User, text));
+    }
+
+    private IEnumerable<ChatMessage> ReduceMessages(IReadOnlyList<ChatMessage> messages)
+    {
+        // Get any leading system messages, plus up to 5 user/assistant messages
+        // This should be enough context to generate suggestions without unnecessarily resending entire conversations when long
+        var systemMessages = messages.TakeWhile(m => m.Role == ChatRole.System);
+        var otherMessages = messages.Where((m, index) => m.Role == ChatRole.User || m.Role == ChatRole.Assistant).Where(m => !string.IsNullOrEmpty(m.Text)).TakeLast(5);
+        return systemMessages.Concat(otherMessages);
+    }
+}

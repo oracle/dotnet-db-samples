@@ -1,0 +1,85 @@
+﻿@page "/"
+@inject ChatAgents Agents
+@implements IDisposable
+
+<PageTitle>Oracle AI Vector Chat</PageTitle>
+
+<ChatHeader OnNewChat="@ResetConversationAsync" />
+
+<ChatMessageList Messages="@messages" InProgressMessage="@currentResponseMessage">
+    <NoMessagesContent>
+        <div>To get started, try asking about these example documents. You can replace these with your own data and replace this message.</div>
+        <ChatCitation File="Example_Emergency_Survival_Kit.pdf"/>
+        <ChatCitation File="Example_GPS_Watch.md"/>
+    </NoMessagesContent>
+</ChatMessageList>
+
+<div class="chat-container">
+    <ChatSuggestions OnSelected="@AddUserMessageAsync" @ref="@chatSuggestions" />
+    <ChatInput OnSend="@AddUserMessageAsync" @ref="@chatInput" />
+    <DocPrompt />
+</div>
+
+@code {
+    private readonly List<ChatMessage> messages = new();
+    private CancellationTokenSource? currentResponseCancellation;
+    private ChatMessage? currentResponseMessage;
+    private AgentSession? session;
+    private ChatInput? chatInput;
+    private ChatSuggestions? chatSuggestions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        session = await Agents.Main.CreateSessionAsync();
+    }
+
+    private async Task AddUserMessageAsync(ChatMessage userMessage)
+    {
+        CancelAnyCurrentResponse();
+
+        // Add the user message to the conversation
+        messages.Add(userMessage);
+        chatSuggestions?.Clear();
+        await chatInput!.FocusAsync();
+
+        // Stream and display a new response from the agent
+        var responseText = new TextContent("");
+        currentResponseMessage = new ChatMessage(ChatRole.Assistant, [responseText]);
+        currentResponseCancellation = new();
+        await foreach (var update in Agents.Main.RunStreamingAsync(userMessage, session, cancellationToken: currentResponseCancellation.Token))
+        {
+            messages.AddMessages(update.AsChatResponseUpdate(), filter: c => c is not TextContent);
+            responseText.Text += update.Text;
+            ChatMessageItem.NotifyChanged(currentResponseMessage);
+        }
+
+        // Store the final response in the UI conversation, and begin getting suggestions
+        messages.Add(currentResponseMessage!);
+        currentResponseMessage = null;
+        chatSuggestions?.Update(messages);
+    }
+
+    private void CancelAnyCurrentResponse()
+    {
+        // If a response was cancelled while streaming, include it in the conversation so it's not lost
+        if (currentResponseMessage is not null)
+        {
+            messages.Add(currentResponseMessage);
+        }
+
+        currentResponseCancellation?.Cancel();
+        currentResponseMessage = null;
+    }
+
+    private async Task ResetConversationAsync()
+    {
+        CancelAnyCurrentResponse();
+        messages.Clear();
+        session = await Agents.Main.CreateSessionAsync();
+        chatSuggestions?.Clear();
+        await chatInput!.FocusAsync();
+    }
+
+    public void Dispose()
+        => currentResponseCancellation?.Cancel();
+}
