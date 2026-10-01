@@ -18,7 +18,7 @@ public class DataIngestor(
         {
             CollectionName = IngestedChunk.CollectionName,
             DistanceFunction = IngestedChunk.VectorDistanceFunction,
-            IncrementalIngestion = false,
+            IncrementalIngestion = true,
         });
 
         using var pipeline = new IngestionPipeline<string>(
@@ -32,6 +32,10 @@ public class DataIngestor(
         await foreach (var result in pipeline.ProcessAsync(directory, searchPattern))
         {
             logger.LogInformation("Completed processing '{id}'. Succeeded: '{succeeded}'.", result.DocumentId, result.Succeeded);
+            if (!result.Succeeded)
+            {
+                logger.LogError(result.Exception, "Failed to ingest '{id}'.", result.DocumentId);
+            }
         }
     }
 }

@@ -9,8 +9,22 @@ public class SemanticSearch(
     DataIngestor dataIngestor)
 {
     private Task? _ingestionTask;
+    private readonly object _ingestionLock = new();
 
-    public async Task LoadDocumentsAsync() => await ( _ingestionTask ??= dataIngestor.IngestDataAsync(ingestionDirectory, searchPattern: "*.*"));
+    public Task LoadDocumentsAsync()
+    {
+        lock (_ingestionLock)
+        {
+            // Share one attempt across users. A later request can retry a failed
+            // attempt; successful attempts remain cached for this process.
+            if (_ingestionTask is null || _ingestionTask.IsFaulted || _ingestionTask.IsCanceled)
+            {
+                _ingestionTask = dataIngestor.IngestDataAsync(ingestionDirectory, searchPattern: "*.*");
+            }
+
+            return _ingestionTask;
+        }
+    }
 
     public async Task<IReadOnlyList<IngestedChunk>> SearchAsync(string text, string? documentIdFilter, int maxResults)
     {

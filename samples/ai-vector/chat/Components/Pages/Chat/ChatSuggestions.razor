@@ -1,4 +1,6 @@
 @inject ChatAgents Agents
+@inject ILogger<ChatSuggestions> Logger
+@implements IDisposable
 
 @if (suggestions is not null)
 {
@@ -15,6 +17,7 @@
 @code {
     private string[]? suggestions;
     private CancellationTokenSource? cancellation;
+    private bool bDisposed;
 
     [Parameter]
     public EventCallback<ChatMessage> OnSelected { get; set; }
@@ -23,6 +26,7 @@
     {
         suggestions = null;
         cancellation?.Cancel();
+        cancellation = null;
     }
 
     public void Update(IReadOnlyList<ChatMessage> messages)
@@ -33,6 +37,10 @@
 
     private async Task UpdateSuggestionsAsync(IReadOnlyList<ChatMessage> messages)
     {
+        if (bDisposed)
+        {
+            return;
+        }
         cancellation?.Cancel();
         cancellation = new CancellationTokenSource();
 
@@ -41,13 +49,20 @@
             var response = await Agents.Suggestions.RunAsync<string[]>(
                 [.. ReduceMessages(messages), new(ChatRole.User, ChatAgentPrompts.Suggestions)],
                 cancellationToken: cancellation.Token);
+            if (bDisposed || cancellation.IsCancellationRequested)
+            {
+                return;
+            }
             suggestions = response.Result;
 
             StateHasChanged();
         }
-        catch (Exception ex) when (ex is not OperationCanceledException)
+        catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
         {
-            await DispatchExceptionAsync(ex);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogWarning(ex, "Failed to generate follow-up suggestions.");
         }
     }
 
@@ -63,5 +78,11 @@
         var systemMessages = messages.TakeWhile(m => m.Role == ChatRole.System);
         var otherMessages = messages.Where((m, index) => m.Role == ChatRole.User || m.Role == ChatRole.Assistant).Where(m => !string.IsNullOrEmpty(m.Text)).TakeLast(5);
         return systemMessages.Concat(otherMessages);
+    }
+
+    public void Dispose()
+    {
+        bDisposed = true;
+        Clear();
     }
 }

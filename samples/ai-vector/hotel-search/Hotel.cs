@@ -8,7 +8,7 @@ namespace OracleAIVectorData
         public int HotelId { get; set; }
 
         [VectorStoreData]
-        public string HotelName { get; set; }
+        public string HotelName { get; set; } = string.Empty;
 
         [VectorStoreData]
         public float Rating { get; set; }
@@ -17,16 +17,16 @@ namespace OracleAIVectorData
         public bool HasParking { get; set; }
 
         [VectorStoreData]
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         //Oracle has numerous vector distance functions to identify the most relevant results.
         //Let's use cosine similarity for the hotel name vectors.
-        [VectorStoreVector(Dimensions: 384, DistanceFunction = DistanceFunction.CosineDistance)]
-        public float[] NameEmbedding { get; set; }
+        [VectorStoreVector(dimensions: 384, DistanceFunction = DistanceFunction.CosineDistance)]
+        public float[] NameEmbedding { get; set; } = [];
 
         //Let's use Euclidean distance for the hotel description vectors.
-        [VectorStoreVector(Dimensions: 384, DistanceFunction = DistanceFunction.EuclideanDistance)]
-        public float[] DescriptionEmbedding { get; set; }
+        [VectorStoreVector(dimensions: 384, DistanceFunction = DistanceFunction.EuclideanDistance)]
+        public float[] DescriptionEmbedding { get; set; } = [];
     }
 }
 /* Copyright (c) 2025 Oracle and/or its affiliates. All rights reserved. */

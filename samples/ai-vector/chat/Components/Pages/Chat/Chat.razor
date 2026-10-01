@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject ChatAgents Agents
+@inject ILogger<Chat> Logger
 @implements IDisposable
 
 <PageTitle>Oracle AI Vector Chat</PageTitle>
@@ -15,6 +16,10 @@
 </ChatMessageList>
 
 <div class="chat-container">
+    @if (responseError is not null)
+    {
+        <div class="page-width" role="alert">@responseError</div>
+    }
     <ChatSuggestions OnSelected="@AddUserMessageAsync" @ref="@chatSuggestions" />
     <ChatInput OnSend="@AddUserMessageAsync" @ref="@chatInput" />
     <DocPrompt />
@@ -27,6 +32,8 @@
     private AgentSession? session;
     private ChatInput? chatInput;
     private ChatSuggestions? chatSuggestions;
+    private string? responseError;
+    private bool bDisposed;
 
     protected override async Task OnInitializedAsync()
     {
@@ -35,7 +42,13 @@
 
     private async Task AddUserMessageAsync(ChatMessage userMessage)
     {
+        if (bDisposed)
+        {
+            return;
+        }
+
         CancelAnyCurrentResponse();
+        responseError = null;
 
         // Add the user message to the conversation
         messages.Add(userMessage);
@@ -46,28 +59,55 @@
         var responseText = new TextContent("");
         currentResponseMessage = new ChatMessage(ChatRole.Assistant, [responseText]);
         currentResponseCancellation = new();
-        await foreach (var update in Agents.Main.RunStreamingAsync(userMessage, session, cancellationToken: currentResponseCancellation.Token))
-        {
-            messages.AddMessages(update.AsChatResponseUpdate(), filter: c => c is not TextContent);
-            responseText.Text += update.Text;
-            ChatMessageItem.NotifyChanged(currentResponseMessage);
-        }
 
-        // Store the final response in the UI conversation, and begin getting suggestions
-        messages.Add(currentResponseMessage!);
-        currentResponseMessage = null;
-        chatSuggestions?.Update(messages);
+        try
+        {
+            await chatInput!.FocusAsync();
+            currentResponseCancellation.Token.ThrowIfCancellationRequested();
+
+            await foreach (var update in Agents.Main.RunStreamingAsync(userMessage, session, cancellationToken: currentResponseCancellation.Token))
+            {
+                messages.AddMessages(update.AsChatResponseUpdate(), filter: c => c is not TextContent);
+                responseText.Text += update.Text;
+                ChatMessageItem.NotifyChanged(currentResponseMessage);
+            }
+
+            // Store the final response in the UI conversation, and begin getting suggestions
+            messages.Add(currentResponseMessage!);
+            currentResponseMessage = null;
+            chatSuggestions?.Update(messages);
+        }
+        catch (OperationCanceledException) when (currentResponseCancellation.IsCancellationRequested)
+        {
+            // A new message, a reset, or navigation cancelled this run.
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Failed to generate a chat response.");
+
+            if (currentResponseMessage is not null && !string.IsNullOrEmpty(currentResponseMessage.Text))
+            {
+                messages.Add(currentResponseMessage);
+            }
+            responseError = "Could not complete the response. Please try again.";
+        }
+        finally
+        {
+            currentResponseCancellation = null;
+            currentResponseMessage = null;
+        }
     }
 
     private void CancelAnyCurrentResponse()
     {
         // If a response was cancelled while streaming, include it in the conversation so it's not lost
-        if (currentResponseMessage is not null)
+        if (currentResponseMessage is not null && !string.IsNullOrEmpty(currentResponseMessage.Text))
         {
             messages.Add(currentResponseMessage);
         }
 
         currentResponseCancellation?.Cancel();
+        currentResponseCancellation = null;
         currentResponseMessage = null;
     }
 
@@ -81,5 +121,8 @@
     }
 
     public void Dispose()
-        => currentResponseCancellation?.Cancel();
+    {
+        bDisposed = true;
+        currentResponseCancellation?.Cancel();
+    }
 }
