@@ -28,7 +28,19 @@ In `appsettings.json`, set the connection string values, including `User Id`, `P
 
 Next, set your OpenAI API key and endpoint in the same file.
 
+As a reminder, keep real credentials out of source control.
+
 Alternatively, all these values can be set using Visual Studio's "Manage User Secrets" UI or on the .NET Command-Line Interface (CLI).
+
+### Configure Oracle AI Database Vector Store with .NET CLI
+
+Configure the database connection string used by `Oracle.VectorData` connector using .NET user secrets:
+
+```sh
+cd <PROJECT-DIRECTORY>
+dotnet user-secrets init
+dotnet user-secrets set Oracle:ConnectionString "<CONNECTION-STRING>"
+```
 
 ### Using OpenAI or an OpenAI-Compatible API Key and Endpoint with .NET CLI
 
@@ -53,15 +65,6 @@ cd <PROJECT-DIRECTORY>
 dotnet user-secrets init
 dotnet user-secrets set OpenAI:Key <API-KEY>
 dotnet user-secrets set OpenAI:Endpoint https://inference.generativeai.<REGION-IDENTIFIER>.oci.oraclecloud.com/20231130/actions/v1
-```
-
-## Configure Oracle AI Database Vector Store with .NET CLI
-
-Configure the database connection string used by `Oracle.VectorData` connector using .NET user secrets:
-
-```sh
-cd <PROJECT-DIRECTORY>
-dotnet user-secrets set Oracle:ConnectionString "<CONNECTION-STRING>"
 ```
 
 ## Application AI Default Settings
