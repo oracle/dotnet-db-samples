@@ -35,27 +35,33 @@ public class AIHotelSearchApp
             .Build();
 
         string? connStr = configuration.GetSection("Oracle")["ConnectionString"];
+        if (string.IsNullOrWhiteSpace(connStr))
+        {
+            throw new InvalidOperationException("Missing configuration: Oracle:ConnectionString.");
+        }
 
-        OracleDataSource? ds = null;
-        OracleVectorStore? vs = null;
-        OracleCollection<int, Hotel>? collection = null;
+        // HotelsData.json contains plain text information about various hotels.
+        // Add Hotels.json directory path below or place file in app's output directory.
+        string jsonContent = File.ReadAllText("Hotels.json");
+        List<Hotel> hotels = JsonSerializer.Deserialize<List<Hotel>>(jsonContent)
+            ?? throw new InvalidOperationException("Hotels.json must contain a JSON array of hotels.");
+        if (hotels.Count == 0 || hotels.Any(hotel => hotel is null ||
+            string.IsNullOrWhiteSpace(hotel.HotelName) || string.IsNullOrWhiteSpace(hotel.Description)))
+        {
+            throw new InvalidOperationException("Hotels.json must contain hotels with nonempty names and descriptions.");
+        }
+
         string collectionName = "Hotels";
+        using OracleDataSource? ds = new OracleDataSourceBuilder(connStr).Build();
+
+        // Create a vector store
+        using OracleVectorStore? vs = new OracleVectorStore(ds);
+
+        // Create a vector collection
+        using OracleCollection<int, Hotel>? collection = (OracleCollection<int, Hotel>)vs.GetCollection<int, Hotel>(collectionName); ;
 
         try
         {
-            ds = new OracleDataSourceBuilder(connStr).Build();
-
-            // Create a vector store
-            vs = new OracleVectorStore(ds);
-
-            // Create a vector collection
-            collection = (OracleCollection<int, Hotel>)vs.GetCollection<int, Hotel>(collectionName);
-
-            // HotelsData.json contains plain text information about various hotels.
-            // Add Hotels.json directory path below or place file in app's output directory.
-            string jsonContent = File.ReadAllText("Hotels.json");
-            List<Hotel>? hotels = JsonSerializer.Deserialize<List<Hotel>>(jsonContent);
-
             // Use the database ONNX generator to create VECTOR(384, FLOAT32) embeddings for each hotel/record.
             foreach (Hotel hotel in hotels)
             {
@@ -142,10 +148,15 @@ public class AIHotelSearchApp
         finally
         {
             // Clean up and delete the collection
-            if (vs != null) { await vs.EnsureCollectionDeletedAsync(collectionName); }
-            ds?.Dispose();
-            vs?.Dispose();
-            collection?.Dispose();
+            try
+            {
+                if (vs != null) { await vs.EnsureCollectionDeletedAsync(collectionName); }
+            }
+            catch (Exception ex)
+            {
+                // Preserve the original failure and still dispose all resources.
+                Console.Error.WriteLine($"Could not delete the '{collectionName}' collection: {ex.Message}");
+            }
         }
     }
 
@@ -153,15 +164,14 @@ public class AIHotelSearchApp
     // This app uses Hugging Face's all-MiniLM-L12-v2 model for all its embeddings.
     static async Task<float[]> GenerateEmbeddingAsync(OracleDataSource ds, string searchText, CancellationToken cancellationtoken = default)
     {
-        using (OracleConnection conn = await ds.OpenConnectionAsync(cancellationtoken))
-        {
-            using (OracleCommand cmd = new OracleCommand($"SELECT TO_VECTOR(VECTOR_EMBEDDING(ALL_MINILM_L12_V2 USING :1 as DATA), 384, FLOAT32)", conn))
-            {
-                cmd.Parameters.Add("searchStr", OracleDbType.Varchar2, null, System.Data.ParameterDirection.Input);
-                cmd.Parameters[0].Value = searchText;
-                return (float[])cmd.ExecuteScalar();
-            }
-        }
+        using OracleConnection conn = await ds.OpenConnectionAsync(cancellationtoken);
+        using OracleCommand cmd = new OracleCommand("SELECT TO_VECTOR(VECTOR_EMBEDDING(ALL_MINILM_L12_V2 USING :1 as DATA), 384, FLOAT32)", conn);
+        
+        cmd.Parameters.Add("searchStr", OracleDbType.Varchar2, null, System.Data.ParameterDirection.Input);
+        cmd.Parameters[0].Value = searchText;
+        
+        return (float[])(await cmd.ExecuteScalarAsync(cancellationtoken)
+            ?? throw new InvalidOperationException("Embedding generation returned no value."));
     }
 
     // Output the hotel's information to the console.
