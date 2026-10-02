@@ -150,7 +150,7 @@ public class AIHotelSearchApp
             // Clean up and delete the collection
             try
             {
-                await vs.EnsureCollectionDeletedAsync(collectionName);
+                if (vs != null) { await vs.EnsureCollectionDeletedAsync(collectionName); }
             }
             catch (Exception ex)
             {
