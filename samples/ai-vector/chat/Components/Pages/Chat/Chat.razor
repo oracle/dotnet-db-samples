@@ -1,0 +1,128 @@
+﻿@page "/"
+@inject ChatAgents Agents
+@inject ILogger<Chat> Logger
+@implements IDisposable
+
+<PageTitle>Oracle AI Vector Chat</PageTitle>
+
+<ChatHeader OnNewChat="@ResetConversationAsync" />
+
+<ChatMessageList Messages="@messages" InProgressMessage="@currentResponseMessage">
+    <NoMessagesContent>
+        <div>To get started, try asking about these example documents. You can replace these with your own data and replace this message.</div>
+        <ChatCitation File="Example_Emergency_Survival_Kit.pdf"/>
+        <ChatCitation File="Example_GPS_Watch.md"/>
+    </NoMessagesContent>
+</ChatMessageList>
+
+<div class="chat-container">
+    @if (responseError is not null)
+    {
+        <div class="page-width" role="alert">@responseError</div>
+    }
+    <ChatSuggestions OnSelected="@AddUserMessageAsync" @ref="@chatSuggestions" />
+    <ChatInput OnSend="@AddUserMessageAsync" @ref="@chatInput" />
+    <DocPrompt />
+</div>
+
+@code {
+    private readonly List<ChatMessage> messages = new();
+    private CancellationTokenSource? currentResponseCancellation;
+    private ChatMessage? currentResponseMessage;
+    private AgentSession? session;
+    private ChatInput? chatInput;
+    private ChatSuggestions? chatSuggestions;
+    private string? responseError;
+    private bool bDisposed;
+
+    protected override async Task OnInitializedAsync()
+    {
+        session = await Agents.Main.CreateSessionAsync();
+    }
+
+    private async Task AddUserMessageAsync(ChatMessage userMessage)
+    {
+        if (bDisposed)
+        {
+            return;
+        }
+
+        CancelAnyCurrentResponse();
+        responseError = null;
+
+        // Add the user message to the conversation
+        messages.Add(userMessage);
+        chatSuggestions?.Clear();
+        await chatInput!.FocusAsync();
+
+        // Stream and display a new response from the agent
+        var responseText = new TextContent("");
+        currentResponseMessage = new ChatMessage(ChatRole.Assistant, [responseText]);
+        currentResponseCancellation = new();
+
+        try
+        {
+            await chatInput!.FocusAsync();
+            currentResponseCancellation.Token.ThrowIfCancellationRequested();
+
+            await foreach (var update in Agents.Main.RunStreamingAsync(userMessage, session, cancellationToken: currentResponseCancellation.Token))
+            {
+                messages.AddMessages(update.AsChatResponseUpdate(), filter: c => c is not TextContent);
+                responseText.Text += update.Text;
+                ChatMessageItem.NotifyChanged(currentResponseMessage);
+            }
+
+            // Store the final response in the UI conversation, and begin getting suggestions
+            messages.Add(currentResponseMessage!);
+            currentResponseMessage = null;
+            chatSuggestions?.Update(messages);
+        }
+        catch (OperationCanceledException) when (currentResponseCancellation.IsCancellationRequested)
+        {
+            // A new message, a reset, or navigation cancelled this run.
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Failed to generate a chat response.");
+
+            if (currentResponseMessage is not null && !string.IsNullOrEmpty(currentResponseMessage.Text))
+            {
+                messages.Add(currentResponseMessage);
+            }
+            responseError = "Could not complete the response. Please try again.";
+        }
+        finally
+        {
+            currentResponseCancellation = null;
+            currentResponseMessage = null;
+        }
+    }
+
+    private void CancelAnyCurrentResponse()
+    {
+        // If a response was cancelled while streaming, include it in the conversation so it's not lost
+        if (currentResponseMessage is not null && !string.IsNullOrEmpty(currentResponseMessage.Text))
+        {
+            messages.Add(currentResponseMessage);
+        }
+
+        currentResponseCancellation?.Cancel();
+        currentResponseCancellation = null;
+        currentResponseMessage = null;
+    }
+
+    private async Task ResetConversationAsync()
+    {
+        CancelAnyCurrentResponse();
+        messages.Clear();
+        session = await Agents.Main.CreateSessionAsync();
+        chatSuggestions?.Clear();
+        await chatInput!.FocusAsync();
+    }
+
+    public void Dispose()
+    {
+        bDisposed = true;
+        currentResponseCancellation?.Cancel();
+    }
+}

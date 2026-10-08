@@ -16,7 +16,7 @@ Running ODP.NET Core Samples from Command Line
 1) Install .NET Core SDK from Microsoft's website: https://dotnet.microsoft.com/download
 2) Open a terminal such as PowerShell, command prompt, or bash. Enter the following commands to create and setup your ODP.NET Core sample: <br>
   A) dotnet new console --output (Sample Name) <br>
-  B) dotnet add package Oracle.ManagedDataAccess.Core --version (e.g. 23.8.0)
+  B) dotnet add package Oracle.ManagedDataAccess.Core --version (e.g. 23.26.3)
 4) Replace the contents of Program.cs with the GitHub sample code of interest.
 5) Insert your user id, password, and data source. The sample will have its own README or comments to indicate additional configuration that may be required.
 6) Run using the following command: dotnet run --project (Sample Name)
@@ -26,7 +26,8 @@ Below is the feature list the samples cover. Each feature's sample has its own s
 
 AI Vector
 ----------------------
-* Search Vector Stores and Collections Sample: Load and vectorize data from .NET. Then, perform exact match searches and similarity searches against the data set.
+* AI Chat: A user can ask questions and receive natural language answers from Oracle AI Database using retrieval-augmented generation (RAG) and Microsoft Agent Framework.
+* AI Hotel Search: Loads and vectorizes data using .NET vector stores and collections, then performs exact match and similarity searches.
 
 Application Continuity
 ----------------------
